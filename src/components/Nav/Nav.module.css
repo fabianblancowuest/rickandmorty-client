@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap");
+
+body {
+	font-family: "Lato", sans-serif;
+}
+
+.navContainer {
+	font-family: "Lato", sans-serif;
+	font-weight: bold;
+	background-color: #070101a2;
+	display: flex;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	z-index: 999;
+	padding: 0.5vh 0.5vw;
+}
+
+.navImg {
+	width: 8vw;
+}
+
+.homeAbout,
+.nav {
+	/* margin-right: 10rem; */
+	width: 100%;
+	font-family: "Lato", sans-serif;
+	flex-basis: 50%;
+	align-items: flex-end;
+	padding: 0 1rem;
+}
+
+.homeAbout {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.navLink,
+.activeLink,
+.button {
+	font-family: "Lato", sans-serif;
+	padding: 0.6vh 1.2vw;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	font-weight: bold;
+	/* margin-top: 1.5rem; */
+	/* margin-bottom: 1.5rem; */
+	margin-right: 1.5rem;
+	border-radius: 0.2rem;
+	cursor: pointer;
+}
+
+.button:nth-last-child(2) {
+	white-space: nowrap;
+	display: flex;
+	justify-content: space-between;
+}
+
+.activeLink {
+	color: orangered !important;
+	/* box-shadow: 1px 1px 5px white; */
+}
+
+.navLink:hover {
+	background-color: rgb(255, 217, 172);
+	color: black;
+}
+
+.button[disabled] {
+	cursor: not-allowed;
+}
+
+.button:hover:not(button[disabled]) {
+	background-color: rgb(255, 217, 172);
+	color: orangered;
+}
+
+.div:hover {
+	/* background-color:rgba(83,11,132, 0.3); */
+	background-color: black;
+}
+
+.signLogin {
+	display: flex;
+	width: 100vw;
+	justify-content: space-around;
+}
+
+.button:nth-last-child(1) {
+	margin-right: 3rem;
+}
+
+@media (max-width: 767px) {
+	/* .menuToggle {
+		display: inline;
+		width: 35px;
+		height: 35px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 1rem;
+		cursor: pointer;
+		gap: 0;
+		z-index: 101;
+		color: white;
+		transition: trasform 0.5s ease-in-out;
+	}
+
+	.navContainer.open {
+		transform: translateX(0);
+	}
+
+	.navContainer {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: 100vh;
+		transform: translate(-100%);
+		transition: transform 0.7s ease-in-out;
+		gap: 0;
+		text-align: center;
+		font-size: 1.2rem;
+	}
+
+	.navImg {
+		display: none;
+	}
+
+	.navContainer div {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.homeAbout {
+		display: flex;
+		justify-content: center;
+	}
+
+	.homeAbout a {
+		width: 100%;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		font-size: 1.3rem;
+		letter-spacing: 1rem;
+	}
+
+	.homeAbout a:hover {
+		background-color: yellow;
+		color: black;
+		font-weight: bold;
+	} */
+}
