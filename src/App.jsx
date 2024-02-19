@@ -21,7 +21,7 @@ function App() {
 
 	function login(userData) {
 		const { email, password } = userData;
-		const URL = "http://localhost:3001/rickandmorty/user/login/";
+		const URL = "/rickandmorty/user/login/";
 		axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
 			const { access } = data;
 			// console.log(data);

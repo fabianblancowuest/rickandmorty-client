@@ -42,9 +42,7 @@ const orderCards = (orden) => {
 const searchById = (id) => {
 	return async (dispatch) => {
 		try {
-			const { data } = await axios(
-				`http://localhost:3001/rickandmorty/character/${id}`,
-			);
+			const { data } = await axios(`/rickandmorty/character/${id}`);
 			return dispatch({
 				type: SEARCH_BY_ID,
 				payload: data,
@@ -85,7 +83,7 @@ const cleanFavorites = () => {
 
 const signUp = (userData) => {
 	return async (dispatch) => {
-		const URL = "http://localhost:3001/rickandmorty/user/signup/";
+		const URL = "/rickandmorty/user/signup/";
 		const { data } = await axios.post(URL, userData);
 		dispatch({
 			type: SIGN_UP,
