@@ -8,9 +8,10 @@ import { Provider } from "react-redux";
 import store from "./redux/store/store";
 import axios from "axios";
 const root = createRoot(document.getElementById("root"));
-// axios.defaults.baseURL = "localhost://3001";
-axios.defaults.baseURL =
-	"https://rickandmorty-server-production-c9cc.up.railway.app/";
+
+axios.defaults.baseURL = "localhost://3001";
+// axios.defaults.baseURL =
+// 	"https://rickandmorty-server-production-c9cc.up.railway.app/";
 
 root.render(
 	<Provider store={store}>

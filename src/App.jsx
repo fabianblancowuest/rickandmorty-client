@@ -19,9 +19,12 @@ function App() {
 	// ** Usuario y contraseña autorizado para el ingreso
 	const navigate = useNavigate();
 
+	const baseURL = "https://rickandmorty-server-production-c9cc.up.railway.app";
+	// const baseURL = "http://localhost:3001";
+
 	function login(userData) {
 		const { email, password } = userData;
-		const URL = "/rickandmorty/user/login/";
+		const URL = `${baseURL}/rickandmorty/user/login/`;
 		axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
 			const { access } = data;
 			// console.log(data);

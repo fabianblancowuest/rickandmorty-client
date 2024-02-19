@@ -14,6 +14,9 @@ import Swal from "sweetalert2";
 import axios from "axios";
 const img =
 	"https://s.yimg.com/ny/api/res/1.2/ERF8gU34MVP46JXFYeTvQQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM2MA--/https://media.zenfs.com/en/cinemablend_388/4cea827a41d7c66770e144612647cf50";
+const baseURL = "https://rickandmorty-server-production-c9cc.up.railway.app";
+// const baseURL = "http://localhost:3001";
+
 // Action creators
 const addFavorite = (objCharacter) => ({
 	type: ADDFAVORITE,
@@ -42,7 +45,7 @@ const orderCards = (orden) => {
 const searchById = (id) => {
 	return async (dispatch) => {
 		try {
-			const { data } = await axios(`/rickandmorty/character/${id}`);
+			const { data } = await axios(`${baseURL}/rickandmorty/character/${id}`);
 			return dispatch({
 				type: SEARCH_BY_ID,
 				payload: data,
@@ -83,7 +86,7 @@ const cleanFavorites = () => {
 
 const signUp = (userData) => {
 	return async (dispatch) => {
-		const URL = "/rickandmorty/user/signup/";
+		const URL = `${baseURL}/rickandmorty/user/signup/`;
 		const { data } = await axios.post(URL, userData);
 		dispatch({
 			type: SIGN_UP,
