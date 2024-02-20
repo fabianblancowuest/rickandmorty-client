@@ -7,9 +7,9 @@ export default defineConfig({
 	server: {
 		host: true,
 	},
-	build: {
-		rollupOptions: {
-			external: ["redux-thunk"],
-		},
-	},
+	// build: {
+	// 	rollupOptions: {
+	// 		external: ["redux-thunk"],
+	// 	},
+	// },
 });
