@@ -54,7 +54,7 @@ const SignUp = () => {
 				timer: 3000,
 			});
 
-			navigate("/login");
+			navigate("/");
 		} catch (error) {
 			alert(error.message);
 		}
