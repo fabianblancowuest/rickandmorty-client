@@ -68,7 +68,7 @@ const Nav = (props) => {
 							onClick={handleCleanFavorites}
 							disabled={!favorites.length}
 						>
-							CLEAN FAVORITES
+							CLEAN FAVS
 						</button>
 					) : null}
 					<button className={styles.button} onClick={props.logout}>
