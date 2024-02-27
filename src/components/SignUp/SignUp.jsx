@@ -1,10 +1,9 @@
 import { useState } from "react";
 import styles from "./SignUp.module.css";
 import { validate } from "./validate";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-// import { signUp } from "../../redux/actions/actions";
+import { signUp } from "../../redux/actions/actions";
 import { useDispatch, useSelector } from "react-redux";
 
 const SignUp = () => {
@@ -36,32 +35,29 @@ const SignUp = () => {
 	// function signUp(userData) {
 	// 	const URL = "http://localhost:3001/rickandmorty/user/signup/";
 
-	// 	try {
-	// 		const { data } = axios.post(URL, userData);
-
-	// 		Swal.fire({
-	// 			position: "top-end",
-	// 			icon: "success",
-	// 			title: "User registered succesfully!",
-	// 			showConfirmButton: false,
-	// 			timer: 3000,
-	// 		});
-
-	// 		return data;
-	// 	} catch (error) {
-	// 		console.log(error);
-	// 	}
 	// }
 	// const users = useSelector((state) => state.users);
-	const signUp = (userData) => {
-		const URL = "http://localhost:3001/rickandmorty/user/signup/";
-		axios.post(URL, userData);
-	};
+	// const signUp = (userData) => {
+	// 	dispatch(signUp(userData));
+	// 	// axios.post(URL, userData);
+	// };
 
 	const handleSubmit = () => {
-		// dispatch(signUp(inputs));
-		// console.log(users);
-		signUp(inputs);
+		try {
+			dispatch(signUp(inputs));
+
+			Swal.fire({
+				position: "top-end",
+				icon: "success",
+				title: "User registered succesfully!",
+				showConfirmButton: false,
+				timer: 3000,
+			});
+
+			navigate("/login");
+		} catch (error) {
+			alert(error.message);
+		}
 	};
 	return (
 		<section className={styles.section}>
