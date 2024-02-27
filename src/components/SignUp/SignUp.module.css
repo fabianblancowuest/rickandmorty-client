@@ -17,22 +17,17 @@
 }
 
 .formDiv {
-	background-image: url(./../../assets/img/backgrounds/backform1.webp);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
 	background-color: rgba(0, 0, 0, 0.5);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	color: white;
-	margin: 28vh auto 5vh;
+	margin: 0 auto;
 	width: 30vw;
-	height: 35rem;
+	height: 36rem;
 	border-radius: 1%;
 	padding: 3vh 0.5rem;
 	box-shadow: 0.1rem 0.1rem 0.5rem rgba(255, 255, 255);
-	margin-bottom: 10rem;
 }
 
 .formDiv:hover {
@@ -63,11 +58,11 @@
 }
 
 .form p {
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 	font-weight: bold;
 	letter-spacing: 0.1rem;
+	background-color: rgba(0, 0, 0, 0.5);
 	opacity: 1;
-	background-color: black;
 	color: red;
 }
 
@@ -129,6 +124,11 @@
 .form select option {
 	background-color: black;
 	color: white;
+}
+
+.form a strong {
+	color: rgb(31, 210, 31);
+	text-shadow: 0.1rem 0.1rem 1rem black;
 }
 
 @media only screen and (max-width: 900px) {

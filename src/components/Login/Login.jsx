@@ -2,6 +2,8 @@ import styles from "./Login.module.css";
 import { useState } from "react";
 import img from "../../assets/img/backgrounds/fondo1.jpg";
 import validate from "./validations";
+import { NavLink } from "react-router-dom";
+import { FaEye } from "react-icons/fa";
 
 const Login = ({ login, datos }) => {
 	const initialState = {
@@ -22,10 +24,22 @@ const Login = ({ login, datos }) => {
 		);
 	};
 
+	const verify = () => {
+		let bul = false;
+		if (Object.keys(errors).length === 0) {
+			bul = true;
+		}
+		return bul;
+	};
+
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		login(userData);
-		setUserData("");
+		if (userData) {
+			login(userData);
+			setUserData("");
+		} else {
+			alert("Lack of data!");
+		}
 	};
 
 	return (
@@ -46,18 +60,32 @@ const Login = ({ login, datos }) => {
 					) : null}
 					<label>PASSWORD</label>
 					<input
+						className={styles.pass}
 						name="password"
 						value={userData.password}
 						type="password"
 						placeholder="Enter your password..."
 						onChange={handleChange}
 					></input>
+					{userData.password.length ? (
+						<FaEye className={styles.ico}></FaEye>
+					) : null}
+
 					{errors.password ? (
 						<p className={styles.danger}>{errors.password}</p>
 					) : null}
 					{!datos ? (
 						<p className={styles.danger}>Usuario o constraseña incorrecto(s)</p>
 					) : null}
+					{verify ? (
+						<span>
+							Not registered?
+							<NavLink to={"/signup"}>
+								<strong> Register</strong>
+							</NavLink>
+						</span>
+					) : null}
+
 					<button onClick={handleSubmit}>Submit</button>
 				</form>
 			</div>

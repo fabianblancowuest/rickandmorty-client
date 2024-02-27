@@ -1,10 +1,11 @@
 import { useState } from "react";
 import styles from "./SignUp.module.css";
 import { validate } from "./validate";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { signUp } from "../../redux/actions/actions";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { FaEye } from "react-icons/fa";
 
 const SignUp = () => {
 	const navigate = useNavigate();
@@ -32,15 +33,6 @@ const SignUp = () => {
 			}),
 		);
 	};
-	// function signUp(userData) {
-	// 	const URL = "http://localhost:3001/rickandmorty/user/signup/";
-
-	// }
-	// const users = useSelector((state) => state.users);
-	// const signUp = (userData) => {
-	// 	dispatch(signUp(userData));
-	// 	// axios.post(URL, userData);
-	// };
 
 	const handleSubmit = () => {
 		try {
@@ -51,7 +43,7 @@ const SignUp = () => {
 				icon: "success",
 				title: "User registered succesfully!",
 				showConfirmButton: false,
-				timer: 3000,
+				timer: 2000,
 			});
 
 			navigate("/");
@@ -89,6 +81,9 @@ const SignUp = () => {
 						value={inputs.password}
 						onChange={handleChange}
 					></input>
+					<span>
+						<FaEye></FaEye>
+					</span>
 					{errors.password && <p>{errors.password}</p>}
 					<label>Date of birth</label>
 					<input
@@ -114,7 +109,13 @@ const SignUp = () => {
 						</option>
 					</select>
 					{errors.sex && <p>{errors.sex}</p>}
-					<button type="submit">Enviar</button>
+					<span>
+						already have an account?
+						<NavLink to={"/"}>
+							<strong> Log in</strong>
+						</NavLink>
+					</span>
+					<button type="submit">Submit</button>
 				</form>
 			</div>
 		</section>

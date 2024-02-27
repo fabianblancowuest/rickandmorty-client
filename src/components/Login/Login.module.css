@@ -21,13 +21,12 @@
 	/* justify-content: center; */
 	align-items: center;
 	color: white;
-	margin: 28vh auto 5vh;
+	margin: 0 auto;
 	width: 30vw;
-	height: 35rem;
+	height: 36rem;
 	border-radius: 1%;
 	padding: 3vh 0.5rem;
 	box-shadow: 0.1rem 0.1rem 0.5rem rgba(255, 255, 255);
-	margin-bottom: 10rem;
 }
 
 .formDiv:hover {
@@ -59,7 +58,7 @@
 }
 
 .form p {
-	font-size: 0.9rem;
+	font-size: 0.8rem;
 	opacity: 1;
 }
 
@@ -86,6 +85,11 @@
 	text-transform: uppercase;
 }
 
+.form a strong {
+	color: rgb(31, 210, 31);
+	text-shadow: 1px 1px 5px black;
+}
+
 ::placeholder {
 	font-size: medium;
 	color: white;
@@ -94,11 +98,11 @@
 .warning {
 	border: solid rgb(255, 229, 29) 1px;
 	border-radius: 0.2em;
-	font-size: 1.3rem;
+	font-size: 1rem;
 }
 
 .danger {
-	font-size: 1.3rem;
+	font-size: 0.5rem;
 	color: rgb(250, 61, 87);
 	font-weight: bold;
 	letter-spacing: 0.1rem;
@@ -112,6 +116,17 @@
 .form input {
 	background-color: rgba(255, 255, 255, 0.5);
 	color: white;
+}
+.form .pass {
+	/* width: 70%; */
+	/* background-color: red; */
+	display: inline;
+}
+
+.form .ico {
+	/* background-color: red; */
+	display: inline;
+	width: fit-content;
 }
 
 @media only screen and (max-width: 900px) {

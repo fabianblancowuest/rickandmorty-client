@@ -75,14 +75,7 @@ const Nav = (props) => {
 						Logout
 					</button>
 				</div>
-			) : (
-				<div className={styles.navContainer}>
-					<div className={styles.signLogin}>
-						<NavLink to="/">Login</NavLink>
-						<NavLink to="/signup">Sign Up</NavLink>
-					</div>
-				</div>
-			)}
+			) : null}
 		</div>
 	);
 };
