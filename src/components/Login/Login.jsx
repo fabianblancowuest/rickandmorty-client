@@ -25,14 +25,6 @@ const Login = ({ login, datos }) => {
 		);
 	};
 
-	const verify = () => {
-		let bul = false;
-		if (Object.keys(errors).length === 0) {
-			bul = true;
-		}
-		return bul;
-	};
-
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		// if (userData) {
@@ -69,7 +61,7 @@ const Login = ({ login, datos }) => {
 						placeholder="Enter your password..."
 						onChange={handleChange}
 					></input>
-					{userData.password.length ? (
+					{userData.password?.length ? (
 						showPassword ? (
 							<FaEyeSlash
 								className={styles.ico}
@@ -93,7 +85,7 @@ const Login = ({ login, datos }) => {
 					{!datos ? (
 						<p className={styles.danger}>Usuario o constraseña incorrecto(s)</p>
 					) : null}
-					{!userData.password.length ? (
+					{!userData.password?.length ? (
 						<span>
 							Not registered?
 							<NavLink to={"/signup"}>
