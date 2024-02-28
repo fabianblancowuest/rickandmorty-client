@@ -81,6 +81,14 @@ const SignUp = () => {
 						value={inputs.password}
 						onChange={handleChange}
 					></input>
+					<label>Repeat Password</label>
+					<input
+						type="password"
+						name="password"
+						placeholder="Enter your password"
+						value={inputs.password}
+						onChange={handleChange}
+					></input>
 					<span>
 						<FaEye></FaEye>
 					</span>

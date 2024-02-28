@@ -3,7 +3,7 @@ import { useState } from "react";
 import img from "../../assets/img/backgrounds/fondo1.jpg";
 import validate from "./validations";
 import { NavLink } from "react-router-dom";
-import { FaEye } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = ({ login, datos }) => {
 	const initialState = {
@@ -13,6 +13,7 @@ const Login = ({ login, datos }) => {
 
 	const [userData, setUserData] = useState(initialState);
 	const [errors, setErrors] = useState(initialState);
+	const [showPassword, setShowPassword] = useState(false);
 
 	const handleChange = (event) => {
 		// ** Agrega las propiedades al objeto inputs que coincida con el valor de input del evento que se está ejecutando
@@ -34,12 +35,12 @@ const Login = ({ login, datos }) => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		if (userData) {
-			login(userData);
-			setUserData("");
-		} else {
-			alert("Lack of data!");
-		}
+		// if (userData) {
+		// } else {
+		// 	alert("Lack of data!");
+		// }
+		login(userData);
+		setUserData("");
 	};
 
 	return (
@@ -61,14 +62,29 @@ const Login = ({ login, datos }) => {
 					<label>PASSWORD</label>
 					<input
 						className={styles.pass}
+						id="pass"
 						name="password"
 						value={userData.password}
-						type="password"
+						type={showPassword ? "text" : "password"}
 						placeholder="Enter your password..."
 						onChange={handleChange}
 					></input>
 					{userData.password.length ? (
-						<FaEye className={styles.ico}></FaEye>
+						showPassword ? (
+							<FaEyeSlash
+								className={styles.ico}
+								onClick={() => {
+									setShowPassword(false);
+								}}
+							></FaEyeSlash>
+						) : (
+							<FaEye
+								className={styles.ico}
+								onClick={() => {
+									setShowPassword(true);
+								}}
+							></FaEye>
+						)
 					) : null}
 
 					{errors.password ? (
@@ -77,7 +93,7 @@ const Login = ({ login, datos }) => {
 					{!datos ? (
 						<p className={styles.danger}>Usuario o constraseña incorrecto(s)</p>
 					) : null}
-					{verify ? (
+					{!userData.password.length ? (
 						<span>
 							Not registered?
 							<NavLink to={"/signup"}>
