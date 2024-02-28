@@ -85,14 +85,14 @@ const Login = ({ login, datos }) => {
 					{!datos ? (
 						<p className={styles.danger}>Usuario o constraseña incorrecto(s)</p>
 					) : null}
-					{!userData.password?.length ? (
-						<span>
-							Not registered?
-							<NavLink to={"/signup"}>
-								<strong> Register</strong>
-							</NavLink>
-						</span>
-					) : null}
+					{/* {!userData.password?.length ? ( */}
+					<span>
+						Not registered?
+						<NavLink to={"/signup"}>
+							<strong> Register</strong>
+						</NavLink>
+					</span>
+					{/* ) : null} */}
 
 					<button onClick={handleSubmit}>Submit</button>
 				</form>
