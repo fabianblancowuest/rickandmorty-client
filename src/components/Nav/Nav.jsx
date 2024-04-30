@@ -20,16 +20,21 @@ const Nav = (props) => {
 
 	const handleToggleMenu = () => {
 		setIsMenuOpen(!isMenuOpen);
-
-		console.log("Se hizo click");
-		console.log(isMenuOpen);
 	};
 	return (
 		<div>
-			{/* <FaBars className={styles.menuToggle} onClick={handleToggleMenu} /> */}
+			{currentPath !== "/" && currentPath !== "/signup" && (
+				<FaBars
+					id="menuToggle"
+					className={styles.menuToggle}
+					onClick={handleToggleMenu}
+				/>
+			)}
 			{currentPath !== "/" && currentPath !== "/signup" ? (
 				<div
-					className={`${styles.navContainer} ${isMenuOpen ? styles.open : ""} `}
+					className={`${styles.navContainer} ${
+						isMenuOpen ? styles.menuToggleShow : ""
+					} `}
 				>
 					<div className={styles.homeAbout}>
 						<NavLink

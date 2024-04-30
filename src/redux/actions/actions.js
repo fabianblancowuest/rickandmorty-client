@@ -14,8 +14,8 @@ import Swal from "sweetalert2";
 import axios from "axios";
 const img =
 	"https://s.yimg.com/ny/api/res/1.2/ERF8gU34MVP46JXFYeTvQQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM2MA--/https://media.zenfs.com/en/cinemablend_388/4cea827a41d7c66770e144612647cf50";
-const baseURL = "https://rym-server-u2eg.onrender.com";
-// const baseURL = "http://localhost:3001";
+// const baseURL = "https://rym-server-u2eg.onrender.com";
+const baseURL = "http://192.168.0.32:3001";
 
 // Action creators
 const addFavorite = (objCharacter) => ({

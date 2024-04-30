@@ -5,7 +5,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { signUp } from "../../redux/actions/actions";
 import { useDispatch } from "react-redux";
-import { FaEye } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const SignUp = () => {
 	const navigate = useNavigate();
@@ -14,11 +14,10 @@ const SignUp = () => {
 		name: "",
 		email: "",
 		password: "",
-		birthdate: "",
-		sex: "",
 	};
 	const [inputs, setInputs] = useState(initialState);
 	const [errors, setErrors] = useState(initialState);
+	const [showPassword, setShowPassword] = useState(false);
 
 	const handleChange = (event) => {
 		setInputs({
@@ -34,8 +33,20 @@ const SignUp = () => {
 		);
 	};
 
-	const handleSubmit = () => {
+	const handleSubmit = (event) => {
 		try {
+			event.preventDefault();
+			console.log(errors);
+
+			// const { name, email, password } = errors;
+
+			// if (inputs.name === "" || inputs.email === "" || inputs.password === "") {
+			// 	Swal.fire({
+			// 		icon: "error",
+			// 		title: "Oops...",
+			// 		text: "You must complete all fields!",
+			// 	});
+			// } else {
 			dispatch(signUp(inputs));
 
 			Swal.fire({
@@ -47,6 +58,7 @@ const SignUp = () => {
 			});
 
 			navigate("/");
+			// }
 		} catch (error) {
 			alert(error.message);
 		}
@@ -75,43 +87,38 @@ const SignUp = () => {
 					{errors.email && <p>{errors.email}</p>}
 					<label>Password</label>
 					<input
-						type="password"
+						type={showPassword ? "text" : "password"}
 						name="password"
 						placeholder="Enter your password"
 						value={inputs.password}
 						onChange={handleChange}
 					></input>
 					{errors.password && <p>{errors.password}</p>}
-					<label>Date of birth</label>
-					<input
-						type="date"
-						name="birthdate"
-						value={inputs.birthdate}
-						onChange={handleChange}
-					></input>
-					{errors.birthdate && <p>{errors.birthdate}</p>}
-					<label htmlFor="sex">Choose your sex</label>
-					<select
-						id="sex"
-						name="sex"
-						onChange={handleChange}
-						value={inputs.sex}
-					>
-						<option value="">--Select an option--</option>
-						<option value="male" id="sex" name="sex">
-							Male
-						</option>
-						<option value="female" id="sex" name="sex">
-							Female
-						</option>
-					</select>
-					{errors.sex && <p>{errors.sex}</p>}
-					<span>
-						already have an account?
-						<NavLink to={"/"}>
-							<strong> Log in</strong>
-						</NavLink>
-					</span>
+					{inputs.password?.length ? (
+						showPassword ? (
+							<FaEyeSlash
+								className={styles.ico}
+								onClick={() => {
+									setShowPassword(false);
+								}}
+							></FaEyeSlash>
+						) : (
+							<FaEye
+								className={styles.ico}
+								onClick={() => {
+									setShowPassword(true);
+								}}
+							></FaEye>
+						)
+					) : null}
+					<div className={styles.register}>
+						<span>already have an account?</span>
+						<span>
+							<NavLink to={"/"}>
+								<strong> Log in</strong>
+							</NavLink>
+						</span>
+					</div>
 					<button type="submit">Submit</button>
 				</form>
 			</div>

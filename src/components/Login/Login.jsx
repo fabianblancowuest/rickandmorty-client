@@ -4,14 +4,17 @@ import img from "../../assets/img/backgrounds/fondo1.jpg";
 import validate from "./validations";
 import { NavLink } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const Login = ({ login, datos }) => {
+	const { email, password } = datos;
 	const initialState = {
 		email: "",
 		password: "",
 	};
 
 	const [userData, setUserData] = useState(initialState);
+	const [incorrect, setIncorrect] = useState(false);
 	const [errors, setErrors] = useState(initialState);
 	const [showPassword, setShowPassword] = useState(false);
 
@@ -26,13 +29,19 @@ const Login = ({ login, datos }) => {
 	};
 
 	const handleSubmit = (event) => {
-		event.preventDefault();
-		// if (userData) {
-		// } else {
-		// 	alert("Lack of data!");
-		// }
-		login(userData);
-		setUserData("");
+		try {
+			event.preventDefault();
+			if (login(userData)) {
+				setIncorrect(false);
+			} else {
+				setIncorrect(true);
+				setUserData(initialState);
+			}
+		} catch (error) {
+			alert({
+				message: error.message,
+			});
+		}
 	};
 
 	return (
@@ -82,17 +91,23 @@ const Login = ({ login, datos }) => {
 					{errors.password ? (
 						<p className={styles.danger}>{errors.password}</p>
 					) : null}
-					{!datos ? (
-						<p className={styles.danger}>Usuario o constraseña incorrecto(s)</p>
+
+					{!userData.email?.length ? (
+						<div className={styles.register}>
+							<span>Not registered?</span>
+							<span>
+								<NavLink to={"/signup"}>
+									<strong> Register</strong>
+								</NavLink>
+							</span>
+						</div>
 					) : null}
-					{/* {!userData.password?.length ? ( */}
-					<span>
-						Not registered?
-						<NavLink to={"/signup"}>
-							<strong> Register</strong>
-						</NavLink>
-					</span>
-					{/* ) : null} */}
+
+					{incorrect && (
+						<p id="incorrect" className={styles.danger}>
+							User or password incorrect
+						</p>
+					)}
 
 					<button onClick={handleSubmit}>Submit</button>
 				</form>

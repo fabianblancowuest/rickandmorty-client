@@ -16,10 +16,11 @@ const About = () => {
 					</div>
 					<div className={styles.info}>
 						<h2>Fabián Blanco Wuest</h2>
-						<h3>Programador Full-Stack</h3>
+						<h3>Full-Stack Developer</h3>
 						<h4>Formosa, Argentina</h4>
 						<h5>
-							Apasionado de aprender nuevas tecnologías y superar desafíos
+							Passionate about learning new technologies and overcoming
+							challenges
 						</h5>
 						<ul className={styles.ul}>{showTechs}</ul>
 						<div className={styles.imgContainer}>

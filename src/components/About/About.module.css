@@ -1,6 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Lilita+One&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Seymour+One&family=Sriracha&display=swap");
+
 .about {
 	display: flex;
-	/* align-items: normal; */
 	justify-content: space-evenly;
 	flex-direction: column;
 	color: rgb(230, 230, 230);
@@ -9,9 +10,12 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	height: 100vh;
+	opacity: 0.9;
 	animation: aparecer 3s ease-in-out;
 	overflow-y: hidden;
-	font-family: "Lato", sans-serif;
+	font-family: "Sriracha", cursive;
+	font-weight: 400;
+	font-style: normal;
 }
 
 .container {
@@ -20,10 +24,13 @@
 
 .info {
 	width: 50%;
-	height: 50vh;
+	height: 70vh;
 	font-size: 1.3vw;
-	font-style: italic;
 	/* letter-spacing: 0.1rem; */
+}
+
+.info h5 {
+	letter-spacing: 0.1rem;
 }
 
 .imgPerfilContainer {
@@ -32,38 +39,31 @@
 	width: 50%;
 }
 .imgPerfil {
-	width: 30vh;
-	border-radius: 25%;
-	border: solid 0.1rem rgb(23, 14, 76);
-	box-shadow: 0.3rem 0.3rem 1rem rgb(84, 142, 163);
+	width: 25vh;
+	border-radius: 50%;
+	border: solid 1px rgba(23, 14, 76, 0.5);
+	box-shadow: 0.1rem 0.1rem 0.5rem rgb(84, 142, 163);
 }
 
 .imgContainer {
 	display: flex;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: center;
+	gap: 5rem;
 }
 
-.imgLinkedin {
-	width: 4vw;
-	background-color: white;
-	border-radius: 0.2rem;
-}
-.imgInstagram {
-	background-color: white;
-	width: 10vw;
-	opacity: 0.8;
-}
-
+.imgLinkedin,
 .imgGithub {
-	width: 4vw;
+	width: 3vw;
+	border-radius: 0.5rem;
 	background-color: white;
+	transition: all 1s ease-in-out;
 }
 
 .imgLinkedin:hover,
 .imgInstagram:hover,
 .imgGithub:hover {
-	transform: scale(1.3);
+	transform: scale(1.2);
 	opacity: 1;
 	box-shadow: 0.3rem 0.3rem 6rem rgb(84, 142, 163);
 }
@@ -80,19 +80,40 @@
 	/* letter-spacing: 0.1rem; */
 }
 .imgPerfil:hover {
-	box-shadow: 0.3rem 0.3rem 10rem rgb(84, 142, 163);
+	box-shadow: 0.3rem 0.3rem 3rem rgb(84, 142, 163);
 }
 
 @keyframes aparecer {
 	0% {
-		opacity: 0;
-	}
-
-	50% {
-		opacity: 0.9;
+		opacity: 0.5;
 	}
 
 	100% {
-		opacity: 1;
+		opacity: 0.9;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.info {
+		width: 100%;
+		font-size: 1rem;
+		position: absolute;
+		top: 30%;
+		left: 0;
+	}
+	.imgPerfilContainer {
+		margin-top: 0;
+	}
+
+	.ul {
+		font-size: 1.1rem;
+	}
+
+	.imgLinkedin,
+	.imgGithub {
+		width: 3.5rem;
+		border-radius: 0.5rem;
+		background-color: white;
+		transition: all 1s ease-in-out;
 	}
 }

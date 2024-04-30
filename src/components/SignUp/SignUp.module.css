@@ -1,12 +1,9 @@
 .section {
 	background-color: rgb(45, 45, 45);
-	/* background-image: url("./../../assets/img/backgrounds/wallpaper300.jpg"); */
-	background-image: url("./../../assets/img/backgrounds/wallpaper100.png");
-
+	background-image: url("./../../assets/img/backgrounds/detail-2.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	/* background-image: url("../../assets/img/form_background.jpg"); */
 	width: 100vw;
 	height: 100vh;
 	overflow-x: hidden;
@@ -58,10 +55,10 @@
 }
 
 .form p {
-	font-size: 0.8rem;
+	font-size: 1rem;
 	font-weight: bold;
 	letter-spacing: 0.1rem;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0);
 	opacity: 1;
 	color: red;
 }
@@ -69,28 +66,32 @@
 .form label {
 	font-weight: 600;
 	text-shadow: 0.1rem 0.1rem 1rem black;
+	letter-spacing: 0.2rem;
 }
 
 .form button {
+	font-size: 1rem;
+	width: 60%;
 	background-color: black;
 	color: white;
-	letter-spacing: 0.3rem;
+	letter-spacing: 0.2rem;
 	font-weight: bold;
 	margin-top: 0.5rem;
-	padding: 0.4rem 0.8rem;
+	padding: 0.7rem 1.2rem;
 	cursor: pointer;
 	text-transform: uppercase;
 	margin-top: auto;
 }
 
 .form button:hover {
-	background-color: rgb(255, 217, 172);
+	background-color: rgba(255, 255, 255, 0.5);
 	color: black;
 	text-transform: uppercase;
 }
 
 ::placeholder {
 	font-size: medium;
+	color: white;
 }
 
 .warning {
@@ -112,6 +113,7 @@
 }
 
 .form input {
+	font-size: 1rem;
 	background-color: rgba(0, 0, 0, 0.5);
 	color: white;
 	text-shadow: 0.1rem 0.1rem 1rem black;
@@ -131,9 +133,31 @@
 	text-shadow: 0.1rem 0.1rem 1rem black;
 }
 
+.form .ico {
+	/* background-color: red; */
+	display: inline;
+	width: fit-content;
+	font-size: 1.3rem;
+}
+
+.register {
+	margin-top: 0.5rem;
+	color: white;
+	letter-spacing: 0.1rem;
+	font-size: 1.1rem;
+	font-weight: bold;
+	text-shadow: 2px 2px 5px black;
+}
+
+.register a {
+	color: rgb(31, 210, 31);
+	text-shadow: 1px 1px 5px black;
+	margin-left: 0.5rem;
+}
+
 @media only screen and (max-width: 900px) {
 	.formDiv {
-		width: 90vw;
+		width: 22rem;
 		margin: 5rem auto;
 		padding: 1rem;
 	}
@@ -143,12 +167,27 @@
 	}
 
 	.form input,
-	.form select,
 	.form button {
-		width: 100%;
+		width: 90%;
+		padding: 0.6rem 0.3rem;
 	}
 
 	.form button {
 		padding: 0.8rem;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.formDiv {
+		height: 80vh;
+		width: 88%;
+	}
+
+	.register {
+		font-size: 1rem;
+	}
+
+	.form .ico {
+		font-size: 1.3rem !important;
 	}
 }

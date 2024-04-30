@@ -83,3 +83,29 @@
 		/* scale: 1; */
 	}
 }
+
+@media screen and (max-width: 768px) {
+	.container {
+		flex-direction: column;
+		padding-top: 5rem;
+	}
+	.item1,
+	.item2 {
+		font-size: 1rem;
+	}
+
+	.item1 h1 {
+		font-size: 2.1rem;
+		padding: inherit 0.5rem;
+	}
+
+	.item1,
+	.item2 {
+		background-color: black;
+		width: 100%;
+	}
+
+	.img {
+		width: 80%;
+	}
+}

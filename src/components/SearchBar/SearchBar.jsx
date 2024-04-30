@@ -113,7 +113,7 @@ export default function SearchBar() {
 	return (
 		<div>
 			{currentPath === "/home" ? (
-				<div className={styles.div}>
+				<div className={styles.searchBarContainer}>
 					<input
 						ref={inputRef}
 						id="input"
