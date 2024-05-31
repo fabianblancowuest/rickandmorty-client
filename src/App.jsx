@@ -23,17 +23,18 @@ function App() {
 	// const baseURL = "http://192.168.0.32:3001";
 
 	function login(userData) {
-		const { email, password } = userData;
-		const URL = `${baseURL}/rickandmorty/user/login/`;
-		axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-			const { access } = data;
-			// console.log(data);
-			setAccess(data);
-			access && navigate("/home");
-		});
+		// const { email, password } = userData;
+		// const URL = `${baseURL}/rickandmorty/user/login/`;
+		// axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+		// 	const { access } = data;
+		// 	// console.log(data);
+		// 	setAccess(data);
+		let access = true;
+		access && navigate("/home");
+		// });
 	} // **Función para limpiar las cards de la pantalla
 	useEffect(() => {
-		!access && navigate("/");
+		access && navigate("/home");
 	}, [access]);
 
 	// ** Función para desloguearse
@@ -52,11 +53,11 @@ function App() {
 			<Nav logout={handleLogout} />
 			{/* ) : null} */}
 			<Routes>
-				<Route
+				{/*<Route
 					exact
 					path="/"
 					element={<Login login={login} datos={datos}></Login>}
-				></Route>
+				></Route>*/}
 				<Route path="/signup" element={<SignUp></SignUp>}></Route>
 				<Route path="/home" element={<Cards />}></Route>
 				<Route path="/about" element={<About></About>}></Route>
