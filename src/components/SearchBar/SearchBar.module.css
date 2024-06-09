@@ -35,6 +35,12 @@
 .audio {
 	display: none;
 }
+
+.input::placeholder {
+	color: rgba(0, 0, 0, 0.5);
+	text-shadow: none;
+	font-size: 0.9rem !important;
+}
 /* Responsive Design */
 
 @media screen and (max-width: 768px) {
@@ -44,20 +50,15 @@
 		align-items: center;
 	}
 
-	.input::placeholder {
-		color: rgba(0, 0, 0, 0.5);
-		text-shadow: none;
-		font-size: 1.2rem !important;
-	}
-
 	.input,
 	.button {
 		font-size: 1.2rem;
 		margin: 0.5rem 0;
 		width: 100%;
+		border-radius: 5px;
 	}
 
 	.button {
-		padding: 0.8rem 0;
+		padding: 0.5em 0;
 	}
 }

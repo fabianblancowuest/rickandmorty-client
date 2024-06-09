@@ -10,7 +10,7 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	height: 100vh;
-	opacity: 0.9;
+	opacity: 1;
 	animation: aparecer 3s ease-in-out;
 	overflow-y: hidden;
 	font-family: "Sriracha", cursive;
@@ -26,7 +26,7 @@
 	width: 50%;
 	height: 70vh;
 	font-size: 1.3vw;
-	/* letter-spacing: 0.1rem; */
+	text-align: center;
 }
 
 .info h5 {
@@ -37,6 +37,8 @@
 	margin-left: 1vw;
 	margin-top: 15vh;
 	width: 50%;
+	margin-top: 3em;
+	text-align: center;
 }
 .imgPerfil {
 	width: 25vh;
@@ -75,8 +77,11 @@
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
+	gap: 1em;
 	list-style: none;
 	font-size: 1.5vw;
+	padding-left: 0;
+
 	/* letter-spacing: 0.1rem; */
 }
 .imgPerfil:hover {
@@ -94,19 +99,36 @@
 }
 
 @media screen and (max-width: 768px) {
+	.about {
+		min-height: 100vh;
+		height: auto;
+	}
+
+	.container {
+		margin-left: 0;
+		padding: 1em 1em;
+	}
 	.info {
 		width: 100%;
+		height: 100%;
 		font-size: 1rem;
-		position: absolute;
-		top: 30%;
 		left: 0;
+		text-align: center;
 	}
 	.imgPerfilContainer {
-		margin-top: 0;
+		margin-top: 3em;
+		width: 100%;
+		text-align: center;
 	}
 
 	.ul {
 		font-size: 1.1rem;
+		max-width: 100%;
+		flex-wrap: wrap;
+	}
+
+	.ul li {
+		list-style: none;
 	}
 
 	.imgLinkedin,

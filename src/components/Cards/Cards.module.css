@@ -3,10 +3,18 @@ body {
 }
 
 .cards {
-	margin-top: 3rem;
+	background-image: url(../../assets/img/backgrounds/background.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	text-align: center;
+	padding-top: 1em;
 	display: flex;
 	flex-wrap: wrap;
-	align-items: center;
+	/* align-items: center; */
 	justify-content: space-evenly;
 	gap: 0 6vw;
 	color: white;

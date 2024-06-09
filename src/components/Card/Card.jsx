@@ -64,7 +64,7 @@ function Card(props) {
 			<div className={styles.buttons}>
 				{!isFavoriteView && (
 					<button className={styles.btn} onClick={handleDelete}>
-						x
+						X
 					</button>
 				)}
 

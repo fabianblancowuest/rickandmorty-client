@@ -45,7 +45,7 @@ a:visited {
 .btn {
 	background-color: rgba(122, 122, 233, 0.1);
 	border: 0.1rem rgba(0, 0, 0, 0.3) solid;
-	/* color: white; */
+	color: white;
 	font-size: large;
 	font-weight: bold;
 }

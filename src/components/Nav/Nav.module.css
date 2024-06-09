@@ -9,7 +9,7 @@ body {
 .navContainer {
 	font-family: "Lato", sans-serif;
 	font-weight: bold;
-	background-color: #070101a2;
+	background-color: rgba(0, 0, 0, 1);
 	display: flex;
 	align-items: center;
 	width: 100vw;
@@ -31,6 +31,7 @@ body {
 }
 
 .homeAbout {
+	max-width: 100%;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -104,17 +105,21 @@ body {
 
 /* Responsive desing */
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
+	.navContainer {
+		padding: 0.5vh 0;
+	}
+
 	.navContainer,
 	.homeAbout {
 		flex-direction: column;
 	}
 
 	.homeAbout a {
-		width: 100%;
 		padding: 1.5rem 0;
 		transition: 0.5s all;
 		letter-spacing: 0.3rem;
+		margin-right: 0;
 	}
 
 	.navImg {

@@ -9,15 +9,6 @@
 	font-family: "Lato", sans-serif !important;
 }
 .App {
-	/* background-image: url("assets/img/backgrounds/background.png"); */
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-image: url(./assets/img/backgrounds/background.png);
-	/* background-image: url(./../src/assets/img/backgrounds/form-back.jpg); */
-	background-repeat: no-repeat;
-	background-position: center;
-	height: 100vh;
 	overflow-x: hidden;
-	text-align: center;
+	overflow-y: hidden;
 }
