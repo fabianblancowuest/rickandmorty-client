@@ -19,7 +19,7 @@ function App() {
 	// ** Usuario y contraseña autorizado para el ingreso
 	const navigate = useNavigate();
 
-	const baseURL = "https://rym-server-u2eg.onrender.com";
+	const baseURL = "https://rym-server-u2eg.onrender.com/home";
 	// const baseURL = "http://192.168.0.32:3001";
 
 	function login(userData) {
