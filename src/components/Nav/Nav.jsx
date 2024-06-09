@@ -23,13 +23,15 @@ const Nav = (props) => {
 	};
 	return (
 		<div>
-			{currentPath !== "/" && currentPath !== "/signup" && (
-				<FaBars
-					id="menuToggle"
-					className={styles.menuToggle}
-					onClick={handleToggleMenu}
-				/>
-			)}
+			{
+				/*currentPath !== "/" &&*/ currentPath !== "/signup" && (
+					<FaBars
+						id="menuToggle"
+						className={styles.menuToggle}
+						onClick={handleToggleMenu}
+					/>
+				)
+			}
 			{/* {currentPath !== "/" && currentPath !== "/signup" ? ( */}
 			<div
 				className={`${styles.navContainer} ${
