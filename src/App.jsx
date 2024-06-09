@@ -19,7 +19,7 @@ function App() {
 	// ** Usuario y contraseña autorizado para el ingreso
 	const navigate = useNavigate();
 
-	const baseURL = "https://rym-server-u2eg.onrender.com/home";
+	const baseURL = "https://rym-server-u2eg.onrender.com";
 	// const baseURL = "http://192.168.0.32:3001";
 
 	function login(userData) {
@@ -30,11 +30,11 @@ function App() {
 		// 	// console.log(data);
 		// 	setAccess(data);
 		let access = true;
-		access && navigate("/home");
+		access && navigate("/");
 		// });
 	} // **Función para limpiar las cards de la pantalla
 	useEffect(() => {
-		access && navigate("/home");
+		access && navigate("/");
 	}, [access]);
 
 	// ** Función para desloguearse
@@ -58,8 +58,8 @@ function App() {
 					path="/"
 					element={<Login login={login} datos={datos}></Login>}
 				></Route>*/}
-				{/* <Route path="/signup" element={<SignUp></SignUp>}></Route> */}
-				<Route path="/home" element={<Cards />}></Route>
+				<Route path="/signup" element={<SignUp></SignUp>}></Route>
+				<Route path="/" element={<Cards />}></Route>
 				<Route path="/about" element={<About></About>}></Route>
 				<Route path="/detail/:id" element={<Detail></Detail>}></Route>
 				<Route path="favorites" element={<Favorites></Favorites>}></Route>

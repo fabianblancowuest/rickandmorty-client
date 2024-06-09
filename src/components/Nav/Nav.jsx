@@ -60,7 +60,7 @@ const Nav = (props) => {
 						className={({ isActive }) =>
 							isActive ? styles.activeLink : styles.navLink
 						}
-						to="/home"
+						to="/"
 					>
 						Home
 					</NavLink>
