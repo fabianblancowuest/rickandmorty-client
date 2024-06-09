@@ -4,6 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { cleanScreen, searchById } from "../../redux/actions/actions.js";
 import Swal from "sweetalert2";
+import { FaSearch } from "react-icons/fa";
+import { MdCleaningServices } from "react-icons/md";
+
 export default function SearchBar() {
 	// **Estado local
 	const location = useLocation();
@@ -126,7 +129,7 @@ export default function SearchBar() {
 					/>
 					<input
 						type="submit"
-						value="ADD CHARACTER"
+						value="SEARCH"
 						className={styles.button}
 						onClick={handleClick}
 					></input>
@@ -136,12 +139,16 @@ export default function SearchBar() {
 						className={styles.button}
 						onClick={handleRandom}
 					></input>
-					<input
+					<button
 						type="submit"
-						value="CLEAN SCREEN"
-						className={styles.button}
+						className={`${styles.button} ${styles.buttonCleanScreen}`}
 						onClick={handleCleanScreen}
-					></input>
+					>
+						CLEAN SCREEN
+						<MdCleaningServices
+							className={styles.iconCleanScreen}
+						></MdCleaningServices>
+					</button>
 				</div>
 			) : null}
 		</div>

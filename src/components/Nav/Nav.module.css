@@ -25,7 +25,7 @@ body {
 	/* margin-right: 10rem; */
 	width: 100%;
 	font-family: "Lato", sans-serif;
-	flex-basis: 50%;
+	/* flex-basis: 50%; */
 	align-items: flex-end;
 	padding: 0 1rem;
 }
@@ -105,7 +105,7 @@ body {
 
 /* Responsive desing */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
 	.navContainer {
 		padding: 0.5vh 0;
 	}
@@ -113,6 +113,7 @@ body {
 	.navContainer,
 	.homeAbout {
 		flex-direction: column;
+		width: 100%;
 	}
 
 	.homeAbout a {
@@ -120,6 +121,9 @@ body {
 		transition: 0.5s all;
 		letter-spacing: 0.3rem;
 		margin-right: 0;
+		width: 100%;
+		height: 30px;
+		text-align: center;
 	}
 
 	.navImg {
@@ -176,5 +180,22 @@ body {
 	.navContainer {
 		height: 100vh;
 		z-index: 100;
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.navImg {
+		display: none;
+	}
+
+	.homeAbout {
+		justify-content: center;
+		gap: 0;
+	}
+
+	.navLink,
+	.activeLink,
+	.button {
+		margin-right: 0.5rem;
 	}
 }
