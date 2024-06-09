@@ -147,26 +147,50 @@ body {
 		color: white;
 	}
 
-	.menuToggle {
-		border: 3px solid black;
-		border-radius: 15%;
-		display: block;
+	.toggleMenuContainer {
+		/* background-color: #170e4c; */
+		display: flex;
 		position: absolute;
 		top: 0;
 		right: 0;
-		margin-top: 1rem;
-		margin-right: 0.5rem;
-		filter: invert(1);
-		width: 30px;
+		width: 100vw;
+		/* justify-content: right; */
 		height: 30px;
-		padding: 0.5rem 0.8rem;
+		width: 100%;
+		background-color: black;
+		padding: 1rem 0;
+		z-index: 2000;
+		align-items: center;
+	}
+
+	.menuToggle {
+		display: flex;
+		/* filter: invert(1); */
+		width: 40px;
+		height: 30px;
+		border: 1px solid white;
+		border-radius: 5px;
+		/* margin-left: 50%; */
+		padding: 0.5rem;
 		z-index: 1000;
+		margin-left: 10px;
+		/* width: 100vw; */
+		/* background-color: black; */
+		color: white;
+	}
+
+	.menuToggle > * {
+		margin-left: 70%;
+	}
+
+	.menuToggleIco {
+		background-color: red;
 	}
 
 	.navContainer {
 		background-color: black;
 		background-image: inherit;
-		padding-top: 4rem;
+		padding-top: 3rem;
 		position: fixed;
 		z-index: 999;
 		transform: translateY(-100%);

@@ -22,68 +22,72 @@ const Nav = (props) => {
 		setIsMenuOpen(!isMenuOpen);
 	};
 	return (
-		<div>
-			{
-				/*currentPath !== "/" &&*/ currentPath !== "/signup" && (
-					<FaBars
-						id="menuToggle"
-						className={styles.menuToggle}
-						onClick={handleToggleMenu}
-					/>
-				)
-			}
-			{/* {currentPath !== "/" && currentPath !== "/signup" ? ( */}
-			<div
-				className={`${styles.navContainer} ${
-					isMenuOpen ? styles.menuToggleShow : ""
-				} `}
-			>
-				<div className={styles.homeAbout}>
-					<NavLink
-						to="/about"
-						className={({ isActive }) =>
-							isActive ? styles.activeLink : styles.navLink
-						}
-					>
-						About
-					</NavLink>
+		<>
+			<div>
+				{
+					/*currentPath !== "/" &&*/ currentPath !== "/signup" && (
+						<div className={styles.toggleMenuContainer}>
+							<FaBars
+								id="menuToggle"
+								className={styles.menuToggle}
+								onClick={handleToggleMenu}
+							/>
+						</div>
+					)
+				}
+				{/* {currentPath !== "/" && currentPath !== "/signup" ? ( */}
+				<div
+					className={`${styles.navContainer} ${
+						isMenuOpen ? styles.menuToggleShow : ""
+					} `}
+				>
+					<div className={styles.homeAbout}>
+						<NavLink
+							to="/about"
+							className={({ isActive }) =>
+								isActive ? styles.activeLink : styles.navLink
+							}
+						>
+							About
+						</NavLink>
 
-					<NavLink
-						to="/favorites"
-						className={({ isActive }) =>
-							isActive ? styles.activeLink : styles.navLink
-						}
-					>
-						Favorites
-					</NavLink>
-					<NavLink
-						className={({ isActive }) =>
-							isActive ? styles.activeLink : styles.navLink
-						}
-						to="/"
-					>
-						Home
-					</NavLink>
-					<img src={navImg} className={styles.navImg}></img>
-				</div>
-				<div className={styles.nav}>
-					<SearchBar />
-				</div>
-				{currentPath === "/favorites" ? (
-					<button
-						className={styles.button}
-						onClick={handleCleanFavorites}
-						disabled={!favorites.length}
-					>
-						CLEAN FAVS
+						<NavLink
+							to="/favorites"
+							className={({ isActive }) =>
+								isActive ? styles.activeLink : styles.navLink
+							}
+						>
+							Favorites
+						</NavLink>
+						<NavLink
+							className={({ isActive }) =>
+								isActive ? styles.activeLink : styles.navLink
+							}
+							to="/"
+						>
+							Home
+						</NavLink>
+						<img src={navImg} className={styles.navImg}></img>
+					</div>
+					<div className={styles.nav}>
+						<SearchBar />
+					</div>
+					{currentPath === "/favorites" ? (
+						<button
+							className={styles.button}
+							onClick={handleCleanFavorites}
+							disabled={!favorites.length}
+						>
+							CLEAN FAVS
+						</button>
+					) : null}
+					<button className={styles.button} onClick={props.logout}>
+						Logout
 					</button>
-				) : null}
-				<button className={styles.button} onClick={props.logout}>
-					Logout
-				</button>
+				</div>
+				{/* ) : null} */}
 			</div>
-			{/* ) : null} */}
-		</div>
+		</>
 	);
 };
 

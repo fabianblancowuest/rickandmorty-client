@@ -9,6 +9,7 @@
 	font-family: "Lato", sans-serif !important;
 }
 .App {
+	background-color: black;
 	overflow-x: hidden;
 	overflow-y: hidden;
 }
