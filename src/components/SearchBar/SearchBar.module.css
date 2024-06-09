@@ -39,7 +39,7 @@
 .input::placeholder {
 	color: rgba(0, 0, 0, 0.5);
 	text-shadow: none;
-	font-size: 0.9rem !important;
+	font-size: 0.8rem !important;
 }
 /* Responsive Design */
 
