@@ -7,6 +7,7 @@ import {
 	FILTER,
 	ORDER,
 	SEARCH_BY_ID,
+	SEARCH_BY_NAME,
 	SIGN_UP,
 } from "../actions/types";
 
@@ -67,6 +68,19 @@ const rootReducer = (state = initialGlobalState, action) => {
 				...state,
 				characters: [...state.characters, payload],
 			};
+		case SEARCH_BY_NAME:
+			return {
+				...state,
+				characters: [
+					...state.characters,
+					state.characters.map((character) => {
+						if (character.name.includes(payload)) {
+							return character;
+						}
+					}),
+				],
+			};
+
 		case DELETE_CHARACTER: {
 			return {
 				...state,

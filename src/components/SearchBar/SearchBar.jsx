@@ -2,7 +2,11 @@ import styles from "./SearchBar.module.css";
 import { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { cleanScreen, searchById } from "../../redux/actions/actions.js";
+import {
+	cleanScreen,
+	searchById,
+	searchByName,
+} from "../../redux/actions/actions.js";
 import Swal from "sweetalert2";
 import { FaSearch } from "react-icons/fa";
 import { MdCleaningServices } from "react-icons/md";
@@ -14,6 +18,7 @@ export default function SearchBar() {
 	const characters = useSelector((state) => state.characters);
 	const initialState = "";
 	const [id, setId] = useState(initialState);
+	const [name, setName] = useState(initialState);
 
 	const inputRef = useRef(null);
 
@@ -25,7 +30,8 @@ export default function SearchBar() {
 
 	function handleChange(event) {
 		// console.log("funciona el handle", event)
-		setId(event.target.value);
+		setId(parseInt(event.target.value));
+		setName(event.target.value);
 	}
 
 	const handleKeyPress = (event) => {
@@ -62,6 +68,10 @@ export default function SearchBar() {
 	};
 
 	const handleClick = () => {
+		if (typeof name === "string") {
+			dispatch(searchByName(name));
+			inputRef.current.value = "";
+		}
 		if (!id) {
 			Swal.fire("Yo must enter an id!");
 			inputRef.current.value = "";

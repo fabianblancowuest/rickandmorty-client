@@ -29,12 +29,12 @@ const Cards = () => {
 
 	const lastCardRef = createRef();
 
-	useEffect(() => {
-		// Si existe una última carta, desplázate hacia ella con un efecto suave
-		if (lastCardRef.current) {
-			lastCardRef.current.scrollIntoView({ behavior: "smooth" });
-		}
-	}, [show]);
+	// useEffect(() => {
+	// 	// Si existe una última carta, desplázate hacia ella con un efecto suave
+	// 	if (lastCardRef.current) {
+	// 		lastCardRef.current.scrollIntoView({ behavior: "smooth" });
+	// 	}
+	// }, [show]);
 	return (
 		<div className={styles.cards}>
 			{/* Ejecutamos la función que recorre el arreglo */}

@@ -8,6 +8,7 @@ import {
 	CLEAN_SCREEN,
 	SIGN_UP,
 	CLEAN_FAVORITES,
+	SEARCH_BY_NAME,
 } from "./types";
 
 import Swal from "sweetalert2";
@@ -67,6 +68,27 @@ const searchById = (id) => {
 	};
 };
 
+const searchByName = (name) => {
+	return async (dispatch) => {
+		try {
+			return dispatch({
+				type: SEARCH_BY_NAME,
+				payload: name,
+			});
+		} catch (error) {
+			return Swal.fire({
+				title: name,
+				text: "Character not found!",
+				color: "red",
+				imageUrl: img,
+				imageWidth: 420,
+				imageHeight: 210,
+				imageAlt: "Error",
+			});
+		}
+	};
+};
+
 const deleteCharacter = (id) => {
 	return {
 		type: DELETE_CHARACTER,
@@ -107,4 +129,5 @@ export {
 	cleanScreen,
 	cleanFavorites,
 	signUp,
+	searchByName,
 };
