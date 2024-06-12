@@ -7,6 +7,9 @@ import {
 	deleteFavorite,
 	deleteCharacter,
 } from "../../redux/actions/actions";
+import redHeart from "./../../assets/img/icons/red-heart.png";
+import whiteHeart from "./../../assets/img/icons/white-heart.png";
+import closeButton from "./../../assets/img/icons/close-button.png";
 
 function Card(props) {
 	const {
@@ -64,17 +67,25 @@ function Card(props) {
 			<div className={styles.buttons}>
 				{!isFavoriteView && (
 					<button className={styles.btn} onClick={handleDelete}>
-						X
+						<img
+							className={styles.closeIcon}
+							src={closeButton}
+							alt="close-button"
+						></img>
 					</button>
 				)}
 
 				{isFav ? (
 					<button className={styles.btnFav} onClick={handleFavorite}>
-						🧡
+						<img className={styles.favIcon} src={redHeart} alt="fav-icon"></img>
 					</button>
 				) : (
 					<button className={styles.btnFav} onClick={handleFavorite}>
-						🤍
+						<img
+							className={styles.favIcon}
+							src={whiteHeart}
+							alt="fav-icon"
+						></img>
 					</button>
 				)}
 			</div>

@@ -1,8 +1,9 @@
 .card {
 	font-size: 0.6rem;
 	letter-spacing: 0.06rem;
+	min-width: fit-content;
 	width: 12rem;
-	height: 20rem;
+	height: 21rem;
 	border-radius: 1rem;
 	box-shadow: 2px 2px 10px #301950;
 	background-color: rgba(0, 0, 0, 0.7);
@@ -22,7 +23,7 @@
 }
 
 .card:hover .img {
-	animation: scaleAnimation 3s;
+	animation: scaleAnimation 3s infinite;
 }
 
 .title {
@@ -31,9 +32,8 @@
 
 .img {
 	border-radius: 25%;
-	/* box-shadow: 1px 1px 20px #0b2b8d; */
-	box-shadow: 0.1rem 0.1rem 3rem whitesmoke;
-	width: 70%;
+	box-shadow: 1px 1px 5px #0b2b8d;
+	width: 75%;
 }
 
 a:link,
@@ -41,29 +41,19 @@ a:visited {
 	color: white;
 	text-decoration: none;
 }
-.btn {
-	background-color: transparent;
-	border: 0.1rem rgba(0, 0, 0, 0.3) solid;
-	color: rgba(255, 255, 255, 0.5);
-	font-size: large;
-	font-weight: bold;
-	border-radius: 5px;
-}
-.btn:hover {
-	color: white;
-	border: 0.1rem rgba(0, 0, 0, 0.1) solid;
-	transform: scale(1.05);
-	cursor: pointer;
-}
 
 .buttons {
-	margin: 0 0.8rem;
+	padding: 0.5em 0;
+	margin: 0 0.5rem;
 	display: flex;
 	justify-content: space-between;
 	flex-direction: row-reverse;
 }
 
-.btnFav {
+.btnFav,
+.btn {
+	display: flex;
+	/* align-items: center; */
 	background-color: transparent;
 	border-radius: 50%;
 	border: none;
@@ -72,10 +62,23 @@ a:visited {
 	/* text-indent: 9rem; */
 }
 
+.btn:hover {
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
 .btnFav:hover {
 	opacity: 1;
 	transform: scale(1.1);
 	cursor: pointer;
+}
+
+.favIcon {
+	width: 25px;
+}
+
+.closeIcon {
+	width: 30px;
 }
 
 @keyframes scaleAnimation {
@@ -93,6 +96,16 @@ a:visited {
 
 	100% {
 		scale: 1;
+	}
+}
+
+@keyframes imgScale {
+	0% {
+		scale: 1.05;
+	}
+
+	100% {
+		scale: 1.05;
 	}
 }
 

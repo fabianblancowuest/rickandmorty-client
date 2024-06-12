@@ -5,7 +5,7 @@ body {
 }
 
 .cards {
-	padding-top: 200px;
+	padding: 50px 10px;
 	background-image: url(../../assets/img/backgrounds/background.png);
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -20,7 +20,7 @@ body {
 	flex-wrap: wrap;
 	/* align-items: center; */
 	justify-content: space-evenly;
-	gap: 1em 10em;
+	gap: 2em 8rem;
 	color: white;
 }
 
