@@ -10,10 +10,14 @@
 	font-family: "Lato", sans-serif;
 }
 
+.container h3 {
+	text-align: center;
+}
+
 .item1,
 .item2 {
 	flex-basis: 50%;
-	font-size: 1.3vw;
+	font-size: 1.3rem;
 	letter-spacing: 0.2rem;
 	height: 100vh;
 	display: flex;
@@ -38,14 +42,14 @@
 
 .item1 h1 {
 	font-weight: bold;
-	font-size: 2.5vw;
+	font-size: 2.5rem;
 	text-transform: uppercase;
 	letter-spacing: 1rem;
-	text-shadow: 1px 1px 5px rgba(255, 255, 255, 1);
+	text-align: center;
 }
 
 .img {
-	width: 22vw;
+	width: 22em;
 	border-radius: 5%;
 	animation: rotateAnimation 2.5s ease-in-out;
 }
@@ -61,7 +65,7 @@
 	}
 
 	50% {
-		rotate: -180deg;
+		rotate: -45deg;
 	}
 
 	85% {
@@ -84,19 +88,21 @@
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
 	.container {
 		flex-direction: column;
-		padding-top: 5rem;
+		height: auto;
 	}
 	.item1,
 	.item2 {
 		font-size: 1rem;
+		padding-bottom: 1em;
 	}
 
 	.item1 h1 {
-		font-size: 2.1rem;
-		padding: inherit 0.5rem;
+		font-size: 1.8rem;
+		padding: inherit 1rem;
+		text-align: center;
 	}
 
 	.item1,
@@ -106,6 +112,6 @@
 	}
 
 	.img {
-		width: 80%;
+		width: 70%;
 	}
 }

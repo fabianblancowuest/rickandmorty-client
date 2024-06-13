@@ -125,7 +125,7 @@ export default function SearchBar() {
 	}
 
 	return (
-		<div>
+		<div className={styles.searchBar}>
 			{currentPath === "/" ? (
 				<div className={styles.searchBarContainer}>
 					<div className={styles.searchBarContainerBtn}>

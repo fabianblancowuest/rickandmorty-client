@@ -67,7 +67,7 @@ const Nav = (props) => {
 						>
 							Home
 						</NavLink>
-						<NavLink to={"/"}>
+						<NavLink className={styles.navImgContainer} to={"/"}>
 							<img src={navImg} className={styles.navImg}></img>
 						</NavLink>
 					</div>
@@ -80,7 +80,7 @@ const Nav = (props) => {
 							onClick={handleCleanFavorites}
 							disabled={!favorites.length}
 						>
-							CLEAN FAVS
+							CLEAN FAVORITES
 						</button>
 					) : null}
 					<button className={styles.button} onClick={props.logout}>

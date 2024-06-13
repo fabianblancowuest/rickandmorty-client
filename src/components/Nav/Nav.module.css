@@ -22,10 +22,8 @@ body {
 
 .homeAbout,
 .nav {
-	/* margin-right: 10rem; */
 	width: 100%;
 	font-family: "Lato", sans-serif;
-	/* flex-basis: 50%; */
 	align-items: flex-end;
 	padding: 0 1rem;
 }
@@ -124,7 +122,10 @@ body {
 	.homeAbout {
 		padding-top: 1em;
 		flex-direction: column;
-		width: 100%;
+	}
+
+	.homeAbout {
+		margin-top: 1em;
 	}
 
 	.homeAbout a {
@@ -139,8 +140,21 @@ body {
 		justify-content: center;
 	}
 
+	.navImgContainer {
+		display: none;
+		position: absolute;
+		top: 1;
+		right: 0;
+		z-index: 3000;
+	}
+
 	.navImg {
 		display: none;
+		position: absolute;
+		top: 1;
+		right: 0;
+		z-index: 3000;
+		width: 60px;
 	}
 
 	.navLink,
@@ -151,12 +165,25 @@ body {
 
 	.button,
 	.button:nth-last-child(1) {
+		border: none;
 		margin: 0 1em !important;
+		display: flex;
 		/* margin-right: 0 !important; */
 		width: 100%;
 		padding: 0.8rem 0;
 		background-color: #170e4c;
 		color: white;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.button:nth-last-child(1) {
+		height: 50px;
+		font-size: 1.2rem;
+	}
+	.button:nth-last-child(2) {
+		justify-content: center;
+		margin-bottom: 1em !important;
 	}
 
 	.toggleMenuContainer {
@@ -222,13 +249,11 @@ body {
 }
 
 @media screen and (max-width: 1100px) {
-	.navImg {
-		display: none;
-	}
-
 	.homeAbout {
 		justify-content: center;
 		gap: 0;
+		padding: 0;
+		width: 100%;
 	}
 
 	.navLink,
