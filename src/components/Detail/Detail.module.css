@@ -91,7 +91,11 @@
 @media screen and (max-width: 900px) {
 	.container {
 		flex-direction: column;
-		height: auto;
+		min-height: fit-content;
+	}
+
+	.item1 {
+		padding-top: 3em;
 	}
 	.item1,
 	.item2 {

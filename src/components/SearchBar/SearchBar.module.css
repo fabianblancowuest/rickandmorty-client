@@ -92,26 +92,24 @@
 		align-items: center;
 	}
 
-	.input::placeholder {
-		font-size: 1rem !important;
+	.searchBarContainerBtn {
+		width: 100vw;
 	}
 
-	.input,
 	.button {
+		width: 100vw;
 		font-size: 1rem;
 		margin: 0.5rem 0;
-		width: 100%;
-		border-radius: 5px;
 		padding: 0.5em 0;
 	}
 
-	.input {
-		width: 95vw;
+	.btnSearch {
+		width: 19%;
 	}
-}
 
-@media screen and (max-width: 900px) {
-	.buttonCleanScreen {
-		display: none;
+	.input {
+		width: 80%;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 }

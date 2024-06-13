@@ -20,40 +20,33 @@ body {
 	width: 8vw;
 }
 
-.homeAbout,
-.nav {
-	width: 100%;
-	font-family: "Lato", sans-serif;
-	align-items: flex-end;
-	padding: 0 1rem;
-}
-
 .homeAbout {
-	max-width: 100%;
+	width: 50%;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+}
+
+.searchBarContainerPrincipal {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	/* justify-content: right; */
+	font-family: "Lato", sans-serif;
+	align-items: flex-end;
+	padding: 0 1rem;
 }
 
 .navLink,
 .activeLink,
 .button {
 	font-family: "Lato", sans-serif;
-	padding: 0.6vh 1.2vw;
+	padding: 0.6rem 1.2rem;
 	font-size: 0.9rem;
 	text-transform: uppercase;
 	font-weight: bold;
-	/* margin-top: 1.5rem; */
-	/* margin-bottom: 1.5rem; */
-	margin-right: 1.5rem;
 	border-radius: 0.2rem;
 	cursor: pointer;
-}
-
-.button:nth-last-child(2) {
-	white-space: nowrap;
-	display: flex;
-	justify-content: space-between;
 }
 
 .activeLink {
@@ -64,15 +57,6 @@ body {
 .navLink:hover {
 	background-color: rgb(255, 217, 172);
 	color: black;
-}
-
-.button[disabled] {
-	cursor: not-allowed;
-}
-
-.button:hover:not(button[disabled]) {
-	background-color: rgb(255, 217, 172);
-	color: orangered;
 }
 
 .div:hover {
@@ -91,19 +75,68 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-right: 3rem;
-	font-size: 0.8rem;
+	font-size: 0.9rem;
 	background-color: red;
 	color: white;
-	width: 100px;
-	height: 35px;
+	width: 120px;
+	height: 40px;
 	border-radius: 5px;
+	letter-spacing: 1px;
+	margin-left: auto;
+	margin-right: 20px;
+}
+
+@media (max-width: 900px) {
+	.button:nth-last-child(1) {
+		background-color: red !important;
+		margin: 0 auto !important;
+	}
+}
+
+/* Container Button Favorites */
+.btnFavoritesContainer {
+	/* width: 50vw; */
+}
+
+/* Button Clean Favorites */
+.btnFavorites {
+	font-family: "Lato", sans-serif;
+	padding: 0.6rem 1.2rem;
+	font-size: 0.9rem;
+	height: 35px;
+	display: flex;
+	align-items: center;
+	width: max-content;
+	font-weight: bold;
+	border-radius: 0.2rem;
+	cursor: pointer;
+}
+
+@media (max-width: 900px) {
+	.btnFavorites {
+		margin: 1rem 0;
+		width: 95vw;
+		height: 40px;
+	}
+}
+
+.button[disabled] {
+	cursor: not-allowed;
+}
+
+.button:hover:not(button[disabled]) {
+	background-color: rgb(255, 217, 172);
+	color: orangered;
 }
 
 .menuToggle {
 	display: none;
 }
 
+.closeSessionImg {
+	margin-left: 10px;
+	max-height: 100%;
+}
 /* li {
 	list-style: none;
 	margin-top: 0;
@@ -138,6 +171,12 @@ body {
 		height: 60px;
 		align-items: center;
 		justify-content: center;
+	}
+
+	.searchBarContainerPrincipal {
+		flex-direction: column;
+		width: 100%;
+		align-items: center;
 	}
 
 	.navImgContainer {
@@ -179,7 +218,8 @@ body {
 
 	.button:nth-last-child(1) {
 		height: 50px;
-		font-size: 1.2rem;
+		font-size: 1rem;
+		max-width: 100%;
 	}
 	.button:nth-last-child(2) {
 		justify-content: center;
@@ -239,12 +279,6 @@ body {
 	.menuToggleShow {
 		position: static;
 		transform: translateY(0);
-	}
-}
-
-@media screen and (max-width: 500px) {
-	.navContainer {
-		z-index: 100;
 	}
 }
 
