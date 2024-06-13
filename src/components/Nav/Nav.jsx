@@ -67,7 +67,9 @@ const Nav = (props) => {
 						>
 							Home
 						</NavLink>
-						<img src={navImg} className={styles.navImg}></img>
+						<NavLink to={"/"}>
+							<img src={navImg} className={styles.navImg}></img>
+						</NavLink>
 					</div>
 					<div className={styles.nav}>
 						<SearchBar />

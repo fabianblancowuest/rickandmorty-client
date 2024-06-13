@@ -30,7 +30,7 @@ const Cards = () => {
 	const lastCardRef = createRef();
 
 	// useEffect(() => {
-	// 	// Si existe una última carta, desplázate hacia ella con un efecto suave
+	// Si existe una última carta, desplázate hacia ella con un efecto suave
 	// 	if (lastCardRef.current) {
 	// 		lastCardRef.current.scrollIntoView({ behavior: "smooth" });
 	// 	}

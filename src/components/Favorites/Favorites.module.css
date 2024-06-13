@@ -3,6 +3,8 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	/* display: flex; */
+	/* justify-content: space-around; */
 	width: 100vw;
 	height: 100vh;
 	overflow-x: hidden;
@@ -16,22 +18,27 @@
 }
 
 .container {
-	/* margin-top: 6rem; */
 	display: flex;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: space-around;
+	gap: 1em 6em;
 	flex-wrap: wrap;
+}
+
+.containerSelects {
+	text-align: center;
 }
 .select {
 	font-family: "Lato", sans-serif;
 	/* font-family: 'Roboto', sans-serif; */
-	padding: 0.6vh 1.4vw;
+	padding: 0.5em 1em;
 	font-size: 1rem;
-	margin-top: 1.5rem;
+	border-radius: 10px;
 	margin-bottom: 1.5rem;
 	margin-right: 1.5rem;
-	border-radius: 0.2rem;
+	background-color: black;
 	cursor: pointer;
+	color: aliceblue;
 }
 
 .select option {
@@ -40,7 +47,10 @@
 
 .select:hover {
 	background-color: black;
-	color: aliceblue;
+}
+
+.favoriteCard {
+	text-align: center;
 }
 @keyframes aparecer {
 	0% {

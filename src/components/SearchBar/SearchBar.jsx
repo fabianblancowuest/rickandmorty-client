@@ -137,12 +137,9 @@ export default function SearchBar() {
 						onChange={handleChange}
 						onKeyDown={handleKeyPress}
 					/>
-					<input
-						type="submit"
-						value="SEARCH"
-						className={styles.button}
-						onClick={handleClick}
-					></input>
+					<button type="submit" className={styles.button} onClick={handleClick}>
+						Search
+					</button>
 					<input
 						type="submit"
 						value="RANDOM"
