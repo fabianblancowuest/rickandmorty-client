@@ -10,6 +10,7 @@ import {
 import Swal from "sweetalert2";
 import { FaSearch } from "react-icons/fa";
 import { MdCleaningServices } from "react-icons/md";
+import searchButton from "../../assets/img/icons/search-button.png";
 
 export default function SearchBar() {
 	// **Estado local
@@ -127,19 +128,25 @@ export default function SearchBar() {
 		<div>
 			{currentPath === "/" ? (
 				<div className={styles.searchBarContainer}>
-					<input
-						ref={inputRef}
-						id="input"
-						className={styles.input}
-						type="search"
-						title="Type the character id and press the ENTER key"
-						placeholder="Search character..."
-						onChange={handleChange}
-						onKeyDown={handleKeyPress}
-					/>
-					<button type="submit" className={styles.button} onClick={handleClick}>
-						Search
-					</button>
+					<div className={styles.searchBarContainerBtn}>
+						<input
+							ref={inputRef}
+							id="input"
+							className={styles.input}
+							type="search"
+							title="Type the character id and press the ENTER key"
+							placeholder="Search..."
+							onChange={handleChange}
+							onKeyDown={handleKeyPress}
+						/>
+						<button
+							type="submit"
+							className={`${styles.button} ${styles.btnSearch}`}
+							onClick={handleClick}
+						>
+							<img src={searchButton} className={styles.searchButtonImg}></img>
+						</button>
+					</div>
 					<input
 						type="submit"
 						value="RANDOM"
