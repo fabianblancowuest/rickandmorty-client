@@ -96,6 +96,20 @@ p {
 	margin-left: 5px;
 }
 
+.skipButton {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+
 .fadeIn {
 	animation: fadeIn 2s ease-in-out; /* Controla la duración de la animación */
 }

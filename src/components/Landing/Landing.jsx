@@ -13,33 +13,34 @@ const Landing = () => {
 	const [showButton, setShowButton] = useState(false);
 	const [videoStarted, setVideoStarted] = useState(false);
 	const videoRef = useRef(null);
+	const [showContent, setShowContent] = useState(false);
 
-	useEffect(() => {
-		if (videoStarted) {
-			const welcomeTimer = setTimeout(() => {
-				setShowWelcome(true);
-			}, 30000); // Mostrar 'Welcome' después de 30 segundos
+	// useEffect(() => {
+	// 	if (videoStarted) {
+	// 		const welcomeTimer = setTimeout(() => {
+	// 			setShowWelcome(true);
+	// 		}, 30000); // Mostrar 'Welcome' después de 30 segundos
 
-			const paragraphTimer = setTimeout(() => {
-				setShowParagraph(true);
-			}, 31000); // Mostrar el primer párrafo 1 segundo después
+	// 		const paragraphTimer = setTimeout(() => {
+	// 			setShowParagraph(true);
+	// 		}, 31000); // Mostrar el primer párrafo 1 segundo después
 
-			const copyright = setTimeout(() => {
-				setShowCopyright(true);
-			}, 33000); // Mostrar el último párrafo 2 segundos después
+	// 		const copyright = setTimeout(() => {
+	// 			setShowCopyright(true);
+	// 		}, 33000); // Mostrar el último párrafo 2 segundos después
 
-			const button = setTimeout(() => {
-				setShowButton(true);
-			}, 34000); // Mostrar el último párrafo 2 segundos después
+	// 		const button = setTimeout(() => {
+	// 			setShowButton(true);
+	// 		}, 34000); // Mostrar el último párrafo 2 segundos después
 
-			return () => {
-				clearTimeout(welcomeTimer);
-				clearTimeout(paragraphTimer);
-				clearTimeout(copyright);
-				clearTimeout(button);
-			};
-		}
-	}, [videoStarted]);
+	// 		return () => {
+	// 			clearTimeout(welcomeTimer);
+	// 			clearTimeout(paragraphTimer);
+	// 			clearTimeout(copyright);
+	// 			clearTimeout(button);
+	// 		};
+	// 	}
+	// }, [videoStarted]);
 
 	const handleVideoEnd = () => {
 		setShowImage(true);
@@ -52,6 +53,14 @@ const Landing = () => {
 		}
 	};
 
+	const handleSkipIntro = () => {
+		if (videoRef.current) {
+			videoRef.current.pause();
+			setShowImage(true);
+			setShowContent(true);
+		}
+	};
+
 	return (
 		<div className={styles.landingContainer}>
 			{showImage ? (
@@ -60,18 +69,12 @@ const Landing = () => {
 					style={{ backgroundImage: `url(${backgroundImage})` }}
 				>
 					<div className={styles.content}>
-						{showWelcome && <h1 className={styles.fadeIn}>Welcome</h1>}
-						{showParagraph && (
-							<p className={styles.fadeIn}>To Rick and Morty App</p>
-						)}
-						{showCopyright && (
-							<h6 className={styles.fadeIn}>By Fabián Blanco Wuest &#169;</h6>
-						)}
-						{showButton && (
-							<NavLink className={styles.btnLanding} to={"/cards"}>
-								Go to Home
-							</NavLink>
-						)}
+						<h1 className={styles.fadeIn}>Welcome</h1>
+						<p className={styles.fadeIn}>To Rick and Morty App</p>
+						<h6 className={styles.fadeIn}>By Fabián Blanco Wuest &#169;</h6>
+						<NavLink className={`${styles.btnLanding}`} to={"/cards"}>
+							Go to Home
+						</NavLink>
 					</div>
 				</div>
 			) : (
@@ -87,6 +90,11 @@ const Landing = () => {
 						src={intro}
 						onEnded={handleVideoEnd}
 					></video>
+					{videoStarted && (
+						<button className={styles.skipButton} onClick={handleSkipIntro}>
+							Skip Intro
+						</button>
+					)}
 				</div>
 			)}
 		</div>
