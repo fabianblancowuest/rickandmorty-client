@@ -118,3 +118,11 @@
 		width: 70%;
 	}
 }
+
+@media (max-width: 768px) {
+	.container {
+		background-image: url(/src/assets/img/backgrounds/mobile-background-3.webp);
+		min-height: 100vh;
+		height: fit-content;
+	}
+}
