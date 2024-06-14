@@ -67,6 +67,7 @@ const Landing = () => {
 					className={styles.video}
 					src={intro}
 					autoPlay
+					muted
 					onEnded={handleVideoEnd}
 				></video>
 			)}
