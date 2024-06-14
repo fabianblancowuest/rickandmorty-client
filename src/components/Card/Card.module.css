@@ -128,13 +128,20 @@ a:visited {
 		font-size: 24px;
 	}
 	.card {
-		width: 16rem;
 		height: 100%;
-		justify-self: center;
+		width: 17rem;
 		padding: 1.5rem 0;
 		font-size: 14px;
 	}
 	.img {
 		width: 75%;
+	}
+
+	.favIcon {
+		width: 35px;
+	}
+
+	.closeIcon {
+		width: 40px;
 	}
 }

@@ -69,6 +69,7 @@
 @media (max-width: 900px) {
 	.containerSelects {
 		flex-direction: column;
+		margin-top: 60px;
 	}
 
 	.select {
