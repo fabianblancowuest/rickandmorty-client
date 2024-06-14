@@ -76,7 +76,7 @@ const Nav = (props) => {
 							className={({ isActive }) =>
 								isActive ? styles.activeLink : styles.navLink
 							}
-							to="/"
+							to="/cards"
 						>
 							Home
 						</NavLink>

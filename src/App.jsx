@@ -14,6 +14,7 @@ import Footer from "./components/Footer/Footer";
 import Landing from "./components/Landing/Landing";
 
 function App() {
+	const location = useLocation();
 	// ** Estado incial del acceso al login
 	const [access, setAccess] = useState(false);
 	//** Estado inicial para validar que el usuario este registrado */
@@ -52,7 +53,7 @@ function App() {
 	return (
 		<div className="App">
 			{/* {useLocation().pathname !== "/" ? ( */}
-			<Nav logout={handleLogout} />
+			{location.pathname !== "/" && <Nav logout={handleLogout}></Nav>}
 			{/* ) : null} */}
 			<Routes>
 				{/*<Route
@@ -61,11 +62,11 @@ function App() {
 					element={<Login login={login} datos={datos}></Login>}
 				></Route>*/}
 				<Route path="/signup" element={<SignUp></SignUp>}></Route>
-				<Route path="/" element={<Cards />}></Route>
+				<Route path="/" element={<Landing></Landing>}></Route>
+				<Route path="/cards" element={<Cards />}></Route>
 				<Route path="/about" element={<About></About>}></Route>
 				<Route path="/detail/:id" element={<Detail></Detail>}></Route>
 				<Route path="/favorites" element={<Favorites></Favorites>}></Route>
-				<Route path="/landing" element={<Landing></Landing>}></Route>
 			</Routes>
 		</div>
 	);

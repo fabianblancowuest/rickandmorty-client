@@ -126,7 +126,7 @@ export default function SearchBar() {
 
 	return (
 		<div className={styles.searchBar}>
-			{currentPath === "/" ? (
+			{currentPath === "/cards" ? (
 				<div className={styles.searchBarContainer}>
 					<div className={styles.searchBarContainerBtn}>
 						<input
