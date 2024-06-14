@@ -104,12 +104,11 @@ body {
 	}
 
 	.button {
-		width: 90vw;
+		width: 95vw;
 		font-size: 1rem;
 		margin: 0.5rem 0;
 		padding: 0.5em 0;
 		margin-left: 0 !important;
-		margin-right: 10px;
 	}
 
 	.btnSearch {
