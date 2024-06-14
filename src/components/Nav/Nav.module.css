@@ -33,7 +33,6 @@ body {
 	align-items: center;
 	/* justify-content: right; */
 	font-family: "Lato", sans-serif;
-	align-items: flex-end;
 	padding: 0 1rem;
 }
 
@@ -83,7 +82,7 @@ body {
 	border-radius: 5px;
 	letter-spacing: 1px;
 	margin-left: auto;
-	margin-right: 20px;
+	margin-right: 30px;
 }
 
 @media (max-width: 900px) {
@@ -110,6 +109,10 @@ body {
 	font-weight: bold;
 	border-radius: 0.2rem;
 	cursor: pointer;
+}
+
+.toggleMenuContainer {
+	display: none;
 }
 
 @media (max-width: 900px) {
@@ -208,12 +211,13 @@ body {
 		margin: 0 1em !important;
 		display: flex;
 		/* margin-right: 0 !important; */
-		width: 100%;
+		width: 95%;
 		padding: 0.8rem 0;
 		background-color: #170e4c;
 		color: white;
 		justify-content: center;
 		align-items: center;
+		margin-left: 0 !important;
 	}
 
 	.button:nth-last-child(1) {
@@ -282,17 +286,44 @@ body {
 	}
 }
 
-@media screen and (max-width: 1100px) {
+@media (min-width: 900px) and (max-width: 1100px) {
 	.homeAbout {
 		justify-content: center;
 		gap: 0;
 		padding: 0;
-		width: 100%;
+		width: 50%;
 	}
 
 	.navLink,
 	.activeLink,
 	.button {
 		margin-right: 0.5rem;
+	}
+
+	.navImgContainer {
+		display: none;
+	}
+
+	.navImg {
+		display: none;
+	}
+
+	.searchBarContainerPrincipal {
+		margin-left: auto;
+	}
+}
+
+@media (min-width: 900px) and (max-width: 1300px) {
+	.homeAbout,
+	.searchBarContainerPrincipal {
+		width: fit-content;
+		align-items: center;
+		/* justify-content: start; */
+		margin-left: 30px;
+	}
+
+	.button:nth-last-child(1) {
+		background-color: red !important;
+		margin-left: 30px;
 	}
 }

@@ -97,10 +97,11 @@
 	}
 
 	.button {
-		width: 100vw;
+		width: 95vw;
 		font-size: 1rem;
 		margin: 0.5rem 0;
 		padding: 0.5em 0;
+		margin-left: 0 !important;
 	}
 
 	.btnSearch {
@@ -108,8 +109,18 @@
 	}
 
 	.input {
-		width: 80%;
+		width: 75%;
 		padding-left: 20px;
 		padding-right: 20px;
+	}
+}
+
+@media (min-width: 900px) and (max-width: 1300px) {
+	.input {
+		width: 100px;
+	}
+
+	.searchButtonImg {
+		max-height: 50%;
 	}
 }
