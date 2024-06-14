@@ -10,6 +10,8 @@ import "./App.css";
 import Favorites from "./components/Favorites/Favorites";
 import { swalFire3 } from "./sweetAlert";
 import SignUp from "./components/SignUp/SignUp";
+import Footer from "./components/Footer/Footer";
+import Landing from "./components/Landing/Landing";
 
 function App() {
 	// ** Estado incial del acceso al login
@@ -62,7 +64,8 @@ function App() {
 				<Route path="/" element={<Cards />}></Route>
 				<Route path="/about" element={<About></About>}></Route>
 				<Route path="/detail/:id" element={<Detail></Detail>}></Route>
-				<Route path="favorites" element={<Favorites></Favorites>}></Route>
+				<Route path="/favorites" element={<Favorites></Favorites>}></Route>
+				<Route path="/landing" element={<Landing></Landing>}></Route>
 			</Routes>
 		</div>
 	);
