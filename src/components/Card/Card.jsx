@@ -63,7 +63,7 @@ function Card(props) {
 	}, [favorites]);
 
 	return (
-		<div className={styles.card}>
+		<article className={styles.card}>
 			<div className={styles.buttons}>
 				{!isFavoriteView && (
 					<button className={styles.btn} onClick={handleDelete}>
@@ -96,7 +96,7 @@ function Card(props) {
 				<h2>{species}</h2>
 				<h2>{gender}</h2>
 			</Link>
-		</div>
+		</article>
 	);
 }
 

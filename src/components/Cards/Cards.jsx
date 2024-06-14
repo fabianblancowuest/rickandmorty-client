@@ -36,12 +36,12 @@ const Cards = () => {
 	// 	}
 	// }, [show]);
 	return (
-		<div className={styles.cards}>
+		<main className={styles.cards}>
 			{/* Ejecutamos la función que recorre el arreglo */}
 			{show}
 			{/* Referencia a la última Card */}
 			<div ref={lastCardRef}></div>
-		</div>
+		</main>
 	);
 };
 

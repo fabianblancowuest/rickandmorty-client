@@ -1,5 +1,5 @@
 import styles from "./About.module.css";
-import imagen from "../../assets/img/backgrounds/perfil_upscaled.png";
+import imagen from "../../assets/img/backgrounds/perfil_upscaled.jpg";
 import linkedin from "../../assets/img/backgrounds/linkedin-ico.svg";
 import github from "../../assets/img/backgrounds/github-ico.svg";
 

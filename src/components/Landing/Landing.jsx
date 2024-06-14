@@ -62,7 +62,7 @@ const Landing = () => {
 	};
 
 	return (
-		<div className={styles.landingContainer}>
+		<header className={styles.landingContainer}>
 			{showImage ? (
 				<div
 					className={styles.backgroundImage}
@@ -97,7 +97,7 @@ const Landing = () => {
 					)}
 				</div>
 			)}
-		</div>
+		</header>
 	);
 };
 

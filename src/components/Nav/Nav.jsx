@@ -25,7 +25,7 @@ const Nav = (props) => {
 	};
 	return (
 		<>
-			<div>
+			<nav>
 				{
 					/*currentPath !== "/" &&*/ currentPath !== "/signup" && (
 						<div className={styles.toggleMenuContainer}>
@@ -110,7 +110,7 @@ const Nav = (props) => {
 					</div>
 				</div>
 				{/* ) : null} */}
-			</div>
+			</nav>
 		</>
 	);
 };
