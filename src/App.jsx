@@ -62,11 +62,11 @@ function App() {
 					element={<Login login={login} datos={datos}></Login>}
 				></Route>*/}
 				<Route path="/signup" element={<SignUp></SignUp>}></Route>
-				<Route path="/" element={<Landing></Landing>}></Route>
+				<Route exact path="/" element={<Landing></Landing>}></Route>
 				<Route path="/cards" element={<Cards />}></Route>
+				<Route path="/favorites" element={<Favorites></Favorites>}></Route>
 				<Route path="/about" element={<About></About>}></Route>
 				<Route path="/detail/:id" element={<Detail></Detail>}></Route>
-				<Route path="/favorites" element={<Favorites></Favorites>}></Route>
 			</Routes>
 		</div>
 	);

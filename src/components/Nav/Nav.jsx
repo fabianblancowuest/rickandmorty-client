@@ -80,9 +80,11 @@ const Nav = (props) => {
 						>
 							Home
 						</NavLink>
-						<NavLink className={styles.navImgContainer} to={"/"}>
-							<img src={navImg} className={styles.navImg}></img>
-						</NavLink>
+						<div className={styles.navImgContainer}>
+							<NavLink to={"/"}>
+								<img src={navImg} className={styles.navImg}></img>
+							</NavLink>
+						</div>
 					</div>
 					{currentPath === "/favorites" ? (
 						<div className={styles.btnFavoritesContainer}>

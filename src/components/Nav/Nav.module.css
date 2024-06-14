@@ -162,6 +162,7 @@ body {
 
 	.homeAbout {
 		margin-top: 1em;
+		width: 100%;
 	}
 
 	.homeAbout a {
@@ -184,19 +185,19 @@ body {
 
 	.navImgContainer {
 		display: none;
-		position: absolute;
+		/* position: absolute;
 		top: 1;
 		right: 0;
-		z-index: 3000;
+		z-index: 3000; */
 	}
 
 	.navImg {
 		display: none;
-		position: absolute;
+		/* position: absolute;
 		top: 1;
 		right: 0;
 		z-index: 3000;
-		width: 60px;
+		width: 60px; */
 	}
 
 	.navLink,
