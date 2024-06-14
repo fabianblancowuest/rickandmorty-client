@@ -67,6 +67,35 @@ p {
 	text-transform: uppercase;
 }
 
+.videoContainer {
+	position: absolute;
+	width: 100vw;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btnStart {
+	position: absolute;
+	z-index: 1;
+	/* padding: 10px 30px; */
+	border-radius: 5px;
+	height: 50px;
+	width: 120px;
+	font-size: 16px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.3rem;
+}
+
+.btnStart img {
+	max-height: 20px;
+	margin-left: 5px;
+}
+
 .fadeIn {
 	animation: fadeIn 2s ease-in-out; /* Controla la duración de la animación */
 }

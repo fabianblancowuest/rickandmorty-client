@@ -1,7 +1,8 @@
 import styles from "./Landing.module.css";
 import intro from "../../assets/video/intro.mp4";
 import backgroundImage from "../../assets/img/backgrounds/favorites3.jpg";
-import { useEffect, useState } from "react";
+import playButton from "../../assets/img/icons/play-button.png";
+import { useEffect, useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
 
 const Landing = () => {
@@ -10,34 +11,45 @@ const Landing = () => {
 	const [showImage, setShowImage] = useState(false);
 	const [showCopyright, setShowCopyright] = useState(false);
 	const [showButton, setShowButton] = useState(false);
+	const [videoStarted, setVideoStarted] = useState(false);
+	const videoRef = useRef(null);
 
 	useEffect(() => {
-		const welcomeTimer = setTimeout(() => {
-			setShowWelcome(true);
-		}, 30000); // Mostrar 'Welcome' después de 30 segundos
+		if (videoStarted) {
+			const welcomeTimer = setTimeout(() => {
+				setShowWelcome(true);
+			}, 30000); // Mostrar 'Welcome' después de 30 segundos
 
-		const paragraphTimer = setTimeout(() => {
-			setShowParagraph(true);
-		}, 31000); // Mostrar el primer párrafo 1 segundo después
+			const paragraphTimer = setTimeout(() => {
+				setShowParagraph(true);
+			}, 31000); // Mostrar el primer párrafo 1 segundo después
 
-		const copyright = setTimeout(() => {
-			setShowCopyright(true);
-		}, 33000); // Mostrar el último párrafo 2 segundos después
+			const copyright = setTimeout(() => {
+				setShowCopyright(true);
+			}, 33000); // Mostrar el último párrafo 2 segundos después
 
-		const button = setTimeout(() => {
-			setShowButton(true);
-		}, 34000); // Mostrar el último párrafo 2 segundos después
+			const button = setTimeout(() => {
+				setShowButton(true);
+			}, 34000); // Mostrar el último párrafo 2 segundos después
 
-		return () => {
-			clearTimeout(welcomeTimer);
-			clearTimeout(paragraphTimer);
-			clearTimeout(copyright);
-			clearTimeout(button);
-		};
-	}, []);
+			return () => {
+				clearTimeout(welcomeTimer);
+				clearTimeout(paragraphTimer);
+				clearTimeout(copyright);
+				clearTimeout(button);
+			};
+		}
+	}, [videoStarted]);
 
 	const handleVideoEnd = () => {
 		setShowImage(true);
+	};
+
+	const handlePlayVideo = () => {
+		if (videoRef.current) {
+			videoRef.current.play();
+			setVideoStarted(true);
+		}
 	};
 
 	return (
@@ -63,13 +75,19 @@ const Landing = () => {
 					</div>
 				</div>
 			) : (
-				<video
-					className={styles.video}
-					src={intro}
-					autoPlay
-					muted
-					onEnded={handleVideoEnd}
-				></video>
+				<div className={styles.videoContainer}>
+					{!videoStarted && (
+						<button className={styles.btnStart} onClick={handlePlayVideo}>
+							Start <img src={playButton} alt="play-button"></img>
+						</button>
+					)}
+					<video
+						ref={videoRef}
+						className={styles.video}
+						src={intro}
+						onEnded={handleVideoEnd}
+					></video>
+				</div>
 			)}
 		</div>
 	);
