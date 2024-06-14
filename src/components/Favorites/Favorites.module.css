@@ -1,4 +1,5 @@
-.article {
+.favorites {
+	padding: 1.5em 0;
 	background-image: url(../../assets/img/backgrounds/favorites5.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -11,10 +12,6 @@
 	overflow-y: scroll;
 	scroll-behavior: smooth;
 	animation: aparecer 4s ease-in-out;
-}
-
-.favorites {
-	margin-top: 5rem;
 }
 
 .container {
