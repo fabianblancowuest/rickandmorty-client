@@ -14,7 +14,7 @@
 }
 
 .favorites {
-	margin-top: 3rem;
+	margin-top: 5rem;
 }
 
 .container {
@@ -26,7 +26,11 @@
 }
 
 .containerSelects {
-	text-align: center;
+	display: flex;
+	justify-content: center;
+	gap: 0.5em 3em;
+	align-items: center;
+	margin-bottom: 2rem;
 }
 .select {
 	font-family: "Lato", sans-serif;
@@ -34,8 +38,6 @@
 	padding: 0.5em 1em;
 	font-size: 1rem;
 	border-radius: 10px;
-	margin-bottom: 1.5rem;
-	margin-right: 1.5rem;
 	background-color: black;
 	cursor: pointer;
 	color: aliceblue;
@@ -64,5 +66,20 @@
 
 	100% {
 		opacity: 1;
+	}
+}
+
+@media (max-width: 900px) {
+	.containerSelects {
+		flex-direction: column;
+	}
+
+	.select {
+		width: 95%;
+		height: 50px;
+		text-align: center;
+		font-size: 1.1rem;
+		text-transform: uppercase;
+		letter-spacing: 1px;
 	}
 }
