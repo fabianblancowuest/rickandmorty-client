@@ -1,3 +1,8 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
 .searchBar {
 	max-width: 500px;
 }
@@ -16,7 +21,7 @@
 
 .input {
 	height: 35px;
-	width: 150px;
+	width: 140px;
 	margin: 0;
 	border: none;
 	padding: 0;
@@ -90,22 +95,25 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-	}
-
-	.searchBarContainerBtn {
 		width: 100vw;
 	}
 
+	.searchBarContainerBtn {
+		max-width: 100%;
+		width: 100%;
+	}
+
 	.button {
-		width: 95vw;
+		width: 90vw;
 		font-size: 1rem;
 		margin: 0.5rem 0;
 		padding: 0.5em 0;
 		margin-left: 0 !important;
+		margin-right: 10px;
 	}
 
 	.btnSearch {
-		width: 19%;
+		width: 15%;
 	}
 
 	.input {
