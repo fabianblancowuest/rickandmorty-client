@@ -29,6 +29,8 @@ export default function SearchBar() {
 		(character) => character.id === parseInt(id),
 	);
 
+	console.log(characters);
+
 	function handleChange(event) {
 		// console.log("funciona el handle", event)
 		setId(parseInt(event.target.value));
@@ -36,12 +38,14 @@ export default function SearchBar() {
 	}
 
 	const handleKeyPress = (event) => {
-		// event.preventDefault();
+		// // event.preventDefault();
 		if (event && event.key === "Enter") {
 			// Lógica que se ejecuta al presionar Enter
-			// console.log('Se presionó la tecla Enter');
-			if (!id) {
-				return Swal.fire("Yo must enter an id!");
+			console.log("Se presionó la tecla Enter");
+			if (typeof name === "string") {
+				dispatch(searchByName(name));
+				inputRef.current.value = "";
+				setName("");
 			}
 
 			if (repeated.length) {
@@ -49,17 +53,17 @@ export default function SearchBar() {
 					title: "Such a character already exists",
 					showClass: {
 						popup: `
-						animate__animated
-						animate__fadeInUp
-						animate__faster
-					  `,
+							animate__animated
+							animate__fadeInUp
+							animate__faster
+						  `,
 					},
 					hideClass: {
 						popup: `
-						animate__animated
-						animate__fadeOutDown
-						animate__faster
-					  `,
+							animate__animated
+							animate__fadeOutDown
+							animate__faster
+						  `,
 					},
 				});
 			}
@@ -72,34 +76,20 @@ export default function SearchBar() {
 		if (typeof name === "string") {
 			dispatch(searchByName(name));
 			inputRef.current.value = "";
-		}
-		if (!id) {
-			Swal.fire("Yo must enter an id!");
-			inputRef.current.value = "";
-			setId("");
-		} else if (repeated.length) {
-			Swal.fire({
-				title: "Such a character already exists",
-				showClass: {
-					popup: `
-					animate__animated
-					animate__fadeInUp
-					animate__faster
-				  `,
-				},
-				hideClass: {
-					popup: `
-					animate__animated
-					animate__fadeOutDown
-					animate__faster
-				  `,
-				},
-			});
-			inputRef.current.value = "";
-			setId("");
+			setName("");
+			// }
+
+			if (characters.length === 0) {
+				alert("No se encontraron coincidencias");
+			}
+
+			// if (repeated.length) {
+			// 	alert("Ya existe ese personaje");
+			// 	setId("");
 		} else {
 			dispatch(searchById(id));
 			inputRef.current.value = "";
+			setId("");
 		}
 	};
 	function handleRandom() {

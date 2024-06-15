@@ -87,14 +87,7 @@ const rootReducer = (state = initialGlobalState, action) => {
 		case SEARCH_BY_NAME:
 			return {
 				...state,
-				characters: [
-					...state.characters,
-					state.characters.map((character) => {
-						if (character.name.includes(payload)) {
-							return character;
-						}
-					}),
-				],
+				characters: [...payload],
 			};
 
 		case DELETE_CHARACTER: {

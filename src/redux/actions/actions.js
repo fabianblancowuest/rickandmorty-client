@@ -89,16 +89,47 @@ const searchById = (id) => {
 };
 
 const searchByName = (name) => {
+	let nameMinus = name.toLowerCase();
 	return async (dispatch) => {
 		try {
+			const { data } = await axios(`https://rickandmortyapi.com/api/character`);
+			const totalPages = data.info.pages;
+
+			let characters = data.results;
+
+			for (let page = 2; page < totalPages; page++) {
+				const { data } = await axios(
+					`https://rickandmortyapi.com/api/character?page=${page}`,
+				);
+				characters = characters.concat(data.results);
+			}
+
+			let characterFounded = [];
+
+			characters.forEach((char) => {
+				if (char.name.toLowerCase().includes(nameMinus)) {
+					characterFounded.push(char);
+				}
+			});
+
+			if (characterFounded.length === 0) {
+				// Si no se encuentra ningún personaje, mostrar alerta
+				return Swal.fire({
+					title: "No encontrado",
+					text: `No se encontró ningún personaje con el nombre "${name}"`,
+					icon: "warning",
+					confirmButtonText: "OK",
+				});
+			}
+
 			return dispatch({
 				type: SEARCH_BY_NAME,
-				payload: name,
+				payload: characterFounded,
 			});
 		} catch (error) {
 			return Swal.fire({
 				title: name,
-				text: "Character not found!",
+				text: "Error!",
 				color: "red",
 				imageUrl: img,
 				imageWidth: 420,
