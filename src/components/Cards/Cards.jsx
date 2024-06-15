@@ -34,7 +34,7 @@ const Cards = () => {
 	});
 
 	useEffect(() => {
-		if (!initialCharactersLoaded) {
+		if (!initialCharactersLoaded && !characters.length) {
 			dispatch(firstChards());
 		}
 		console.log(characters);
