@@ -9,6 +9,7 @@ import {
 	SIGN_UP,
 	CLEAN_FAVORITES,
 	SEARCH_BY_NAME,
+	CHARACTERS,
 } from "./types";
 
 import Swal from "sweetalert2";
@@ -41,6 +42,25 @@ const orderCards = (orden) => {
 	return {
 		type: ORDER,
 		payload: orden,
+	};
+};
+
+const firstChards = () => {
+	return async (dispatch) => {
+		try {
+			const { data } = await axios(
+				`https://rickandmortyapi.com/api/character/?page=1`,
+			);
+
+			const characters = data.results;
+
+			return dispatch({
+				type: CHARACTERS,
+				payload: characters,
+			});
+		} catch (error) {
+			console.log(error);
+		}
 	};
 };
 
@@ -130,4 +150,5 @@ export {
 	cleanFavorites,
 	signUp,
 	searchByName,
+	firstChards,
 };

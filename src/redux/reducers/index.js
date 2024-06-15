@@ -1,5 +1,6 @@
 import {
 	ADDFAVORITE,
+	CHARACTERS,
 	CLEAN_FAVORITES,
 	CLEAN_SCREEN,
 	DELETEFAVORITE,
@@ -16,14 +17,21 @@ const initialGlobalState = {
 	// character: [],
 	favoritesCopy: [],
 	characters: [],
+	// firstCharacters: [],
 	// access: false,
 	users: [],
+	initialCharactersLoaded: false,
 };
 
 const rootReducer = (state = initialGlobalState, action) => {
 	const { type, payload } = action;
 
 	switch (type) {
+		case CHARACTERS:
+			return {
+				...state,
+				characters: [...state.characters, ...payload],
+			};
 		case ADDFAVORITE:
 			return {
 				...state,
@@ -64,10 +72,18 @@ const rootReducer = (state = initialGlobalState, action) => {
 				favorites: sortedCharacters,
 			};
 		case SEARCH_BY_ID:
-			return {
-				...state,
-				characters: [...state.characters, payload],
-			};
+			if (!state.initialCharactersLoaded) {
+				return {
+					...state,
+					characters: [payload],
+					initialCharactersLoaded: true, // Actualiza la bandera para indicar que los personajes iniciales han sido reemplazados
+				};
+			} else {
+				return {
+					...state,
+					characters: [...state.characters, payload], // Agrega el nuevo personaje al array existente
+				};
+			}
 		case SEARCH_BY_NAME:
 			return {
 				...state,

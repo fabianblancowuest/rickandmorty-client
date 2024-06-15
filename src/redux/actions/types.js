@@ -8,3 +8,4 @@ export const CLEAN_SCREEN = "CLEAN_SCREEN";
 export const CLEAN_FAVORITES = "CLEAN_FAVORITES";
 export const SIGN_UP = "SIGN_UP";
 export const SEARCH_BY_NAME = "SEARCH_BY_NAME";
+export const CHARACTERS = "CHARACTERS";
