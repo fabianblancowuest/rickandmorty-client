@@ -20,6 +20,7 @@ export default function SearchBar() {
 	const initialState = "";
 	const [id, setId] = useState(initialState);
 	const [name, setName] = useState(initialState);
+	const [wasSearched, setWasSearched] = useState(false);
 
 	const inputRef = useRef(null);
 
@@ -42,7 +43,7 @@ export default function SearchBar() {
 		if (event && event.key === "Enter") {
 			// Lógica que se ejecuta al presionar Enter
 			console.log("Se presionó la tecla Enter");
-			if (typeof name === "string") {
+			if (typeof name != "number") {
 				dispatch(searchByName(name));
 				inputRef.current.value = "";
 				setName("");
@@ -67,29 +68,27 @@ export default function SearchBar() {
 					},
 				});
 			}
-			dispatch(searchById(id));
-			setId("");
+			// dispatch(searchById(id));
+			// setId("");
+			setWasSearched(true);
 		}
 	};
 
 	const handleClick = () => {
-		if (typeof name === "string") {
+		if (typeof name != "number") {
 			dispatch(searchByName(name));
 			inputRef.current.value = "";
 			setName("");
 			// }
 
-			if (characters.length === 0) {
-				alert("No se encontraron coincidencias");
-			}
-
 			// if (repeated.length) {
 			// 	alert("Ya existe ese personaje");
 			// 	setId("");
+			setWasSearched(true);
 		} else {
-			dispatch(searchById(id));
-			inputRef.current.value = "";
-			setId("");
+			// dispatch(searchById(id));
+			// inputRef.current.value = "";
+			// setId("");
 		}
 	};
 	function handleRandom() {

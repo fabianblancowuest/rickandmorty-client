@@ -21,6 +21,7 @@ const initialGlobalState = {
 	// access: false,
 	users: [],
 	initialCharactersLoaded: false,
+	searchCompleted: false,
 };
 
 const rootReducer = (state = initialGlobalState, action) => {
@@ -88,6 +89,7 @@ const rootReducer = (state = initialGlobalState, action) => {
 			return {
 				...state,
 				characters: [...payload],
+				searchCompleted: true,
 			};
 
 		case DELETE_CHARACTER: {
