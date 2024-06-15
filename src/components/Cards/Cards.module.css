@@ -21,7 +21,7 @@ body {
 	justify-content: space-evenly;
 	gap: 2em 8rem;
 	color: white;
-	animation: aparecer 4s ease-in-out;
+	animation: aparecer 5s ease-in-out;
 }
 
 .searchBar {

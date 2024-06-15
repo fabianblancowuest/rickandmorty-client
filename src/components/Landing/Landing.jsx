@@ -1,6 +1,6 @@
 import styles from "./Landing.module.css";
 import intro from "../../assets/video/intro.mp4";
-import backgroundImage from "../../assets/img/backgrounds/detail-2.png";
+import backgroundImage from "../../assets/img/backgrounds/detail-2-tiny.jpg";
 import playButton from "../../assets/img/icons/play-button.png";
 import { useEffect, useState, useRef } from "react";
 import { NavLink } from "react-router-dom";
