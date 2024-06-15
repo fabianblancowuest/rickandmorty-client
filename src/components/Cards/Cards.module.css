@@ -21,6 +21,7 @@ body {
 	justify-content: space-evenly;
 	gap: 2em 8rem;
 	color: white;
+	animation: aparecer 4s ease-in-out;
 }
 
 .searchBar {
@@ -34,5 +35,19 @@ body {
 		padding-top: 6rem;
 		justify-content: center;
 		align-items: center;
+	}
+}
+
+@keyframes aparecer {
+	0% {
+		opacity: 0;
+	}
+
+	25% {
+		opacity: 0.9;
+	}
+
+	100% {
+		opacity: 1;
 	}
 }
