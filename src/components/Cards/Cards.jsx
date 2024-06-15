@@ -4,6 +4,7 @@ import styles from "./Cards.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { firstChards } from "../../redux/actions/actions";
+import imgBackground from "./../../assets/img/backgrounds/background.png";
 
 const Cards = () => {
 	// Función para recorrer el arreglo de objeto de personajes y renderizar cada propiedad en la pantalla
