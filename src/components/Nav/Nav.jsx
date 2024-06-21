@@ -86,7 +86,7 @@ const Nav = (props) => {
 							</NavLink>
 						</div>
 					</div>
-					{currentPath === "/favorites" ? (
+					{/* {currentPath === "/favorites" ? (
 						<div className={styles.btnFavoritesContainer}>
 							<button
 								className={styles.btnFavorites}
@@ -96,7 +96,7 @@ const Nav = (props) => {
 								CLEAN FAVORITES
 							</button>
 						</div>
-					) : null}
+					) : null} */}
 					<div className={styles.searchBarContainerPrincipal}>
 						<SearchBar />
 						<button className={styles.button} onClick={props.logout}>

@@ -11,6 +11,8 @@ import Swal from "sweetalert2";
 import { FaSearch } from "react-icons/fa";
 import { MdCleaningServices } from "react-icons/md";
 import searchButton from "../../assets/img/icons/search-button.png";
+import cleanScreenIco from "../../assets/img/icons/clean.png";
+import random from "../../assets/img/icons/random.png";
 
 export default function SearchBar() {
 	// **Estado local
@@ -136,18 +138,29 @@ export default function SearchBar() {
 							<img src={searchButton} className={styles.searchButtonImg}></img>
 						</button>
 					</div>
-					<input
+					<button
 						type="submit"
-						value="RANDOM"
 						className={styles.button}
 						onClick={handleRandom}
-					></input>
+					>
+						RANDOM
+						<img
+							className={styles.cleanScreenIcon}
+							src={random}
+							alt="Random Ico"
+						></img>
+					</button>
 					<button
 						type="submit"
 						className={`${styles.button} ${styles.buttonCleanScreen}`}
 						onClick={handleCleanScreen}
 					>
 						CLEAN SCREEN
+						<img
+							className={styles.cleanScreenIcon}
+							src={cleanScreenIco}
+							alt="Icon Clean Screen"
+						></img>
 						<MdCleaningServices
 							className={styles.iconCleanScreen}
 						></MdCleaningServices>
