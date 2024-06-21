@@ -28,7 +28,7 @@ body {
 	width: 2rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
 	.cards {
 		background-image: url(../../assets/img/backgrounds/mobile-background-2.webp);
 		/* background-size: contain; */
