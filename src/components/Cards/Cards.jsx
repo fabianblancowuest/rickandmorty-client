@@ -54,11 +54,11 @@ const Cards = () => {
 		<main className={styles.cards}>
 			{/* Ejecutamos la función que recorre el arreglo */}
 			{show}
-			{searchCompleted && characters.length ? (
+			{/* {searchCompleted && characters.length ? (
 				<p>Mostrando todas las coincidencias encontradas</p>
 			) : (
 				<p>No se encontraron coincidencias</p>
-			)}
+			)} */}
 			{/* Referencia a la última Card */}
 			<div ref={lastCardRef}></div>
 		</main>
