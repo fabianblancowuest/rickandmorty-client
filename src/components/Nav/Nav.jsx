@@ -100,9 +100,9 @@ const Nav = (props) => {
 					<div className={styles.searchBarContainerPrincipal}>
 						<SearchBar />
 						<button className={styles.button} onClick={props.logout}>
-							Logout{" "}
+							<span className={styles.logoutText}>Logout</span>
 							<img
-								className={styles.closeSessionImg}
+								className={styles.logoutIcon}
 								src={closeSession}
 								alt="cerrar-sesion"
 							></img>
