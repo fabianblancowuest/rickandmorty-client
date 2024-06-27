@@ -90,6 +90,7 @@
 
 @media screen and (max-width: 900px) {
 	.container {
+		margin-top: 1.5em;
 		flex-direction: column;
 		min-height: fit-content;
 		height: auto;
