@@ -90,7 +90,6 @@
 
 @media screen and (max-width: 900px) {
 	.container {
-		margin-top: 4em;
 		flex-direction: column;
 		min-height: fit-content;
 		height: auto;
@@ -121,7 +120,7 @@
 
 @media (max-width: 768px) {
 	.container {
-		background-image: url(/src/assets/img/backgrounds/mobile-background-3.webp);
+		background-image: none;
 		min-height: 100vh;
 		height: fit-content;
 	}
