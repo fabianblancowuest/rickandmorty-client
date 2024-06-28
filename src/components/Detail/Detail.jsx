@@ -28,11 +28,11 @@ const Detail = () => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.item1}>
-				<h1>{character.name}</h1>
-				<h3>STATUS | {character.status}</h3>
-				<h3>GENDER | {character.gender}</h3>
+				<h1>{character?.name}</h1>
+				<h3>STATUS | {character?.status}</h3>
+				<h3>GENDER | {character?.gender}</h3>
 				{/* {watchCard ? <h3>ORIGIN | {character.origin.name}</h3> : null} */}
-				<h3>SPECIE | {character.species}</h3>
+				<h3>SPECIE | {character?.species}</h3>
 				{/* {character.id ? (<h3>ORIGIN | {character.origin.name}</h3>) : null} */}
 				<h3>ORIGIN | {character.origin?.name}</h3>
 				{/* <h3>ur{character["location"]["name"]}</h3> */}
