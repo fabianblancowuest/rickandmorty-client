@@ -98,6 +98,9 @@ export default function SearchBar() {
 		dispatch(searchById(random));
 	}
 	function handleCleanScreen() {
+		if (!characters.length) {
+			return alert("Ya está limpia la pantalla bombolo");
+		}
 		Swal.fire({
 			title: "Are you sure?",
 			text: "You won't be able to reverse this!",
@@ -150,21 +153,40 @@ export default function SearchBar() {
 							alt="Random Ico"
 						></img>
 					</button>
-					<button
-						type="submit"
-						className={`${styles.button} ${styles.buttonCleanScreen}`}
-						onClick={handleCleanScreen}
-					>
-						CLEAN SCREEN
-						<img
-							className={styles.cleanScreenIcon}
-							src={cleanScreenIco}
-							alt="Icon Clean Screen"
-						></img>
-						<MdCleaningServices
-							className={styles.iconCleanScreen}
-						></MdCleaningServices>
-					</button>
+					{!characters.length ? (
+						<button
+							type="submit"
+							className={`${styles.button} ${styles.buttonCleanScreen}`}
+							onClick={handleCleanScreen}
+							disabled
+						>
+							CLEAN SCREEN
+							<img
+								className={styles.cleanScreenIcon}
+								src={cleanScreenIco}
+								alt="Icon Clean Screen"
+							></img>
+							<MdCleaningServices
+								className={styles.iconCleanScreen}
+							></MdCleaningServices>
+						</button>
+					) : (
+						<button
+							type="submit"
+							className={`${styles.button} ${styles.buttonCleanScreen}`}
+							onClick={handleCleanScreen}
+						>
+							CLEAN SCREEN
+							<img
+								className={styles.cleanScreenIcon}
+								src={cleanScreenIco}
+								alt="Icon Clean Screen"
+							></img>
+							<MdCleaningServices
+								className={styles.iconCleanScreen}
+							></MdCleaningServices>
+						</button>
+					)}
 				</div>
 			) : null}
 		</div>

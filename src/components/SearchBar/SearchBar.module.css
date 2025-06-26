@@ -52,6 +52,10 @@ body {
 	color: black;
 }
 
+button:disabled {
+	display: none;
+}
+
 .searchBarContainerBtn {
 	display: flex;
 	align-items: center;
