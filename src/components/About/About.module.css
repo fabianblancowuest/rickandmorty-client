@@ -48,27 +48,38 @@
 
 .imgContainer {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	gap: 5rem;
+	gap: 10px 80px;
+}
+
+@media (max-width: 900x) {
+	.imgContainer {
+		gap: 10px 40px;
+	}
 }
 
 .imgLinkedin,
-.imgGithub {
+.imgGithub,
+.imgPortafolio {
+	color: white;
 	width: 4rem;
-	border-radius: 0.5rem;
+	border-radius: 15%;
 	background-color: white;
-	transition: all 1s ease-in-out;
+	transition: all 0.3s ease-out;
+	box-shadow: 3px 3px 5px white;
 }
 
 .imgLinkedin:hover,
 .imgInstagram:hover,
-.imgGithub:hover {
+.imgGithub:hover,
+.imgPortafolio:hover {
 	-webkit-transform: scale(1.2);
-	transform: scale(1.2);
+	transform: scale(1.05);
 	opacity: 1;
-	-webkit-box-shadow: 0.3rem 0.3rem 6rem rgb(84, 142, 163);
-	box-shadow: 0.3rem 0.3rem 6rem rgb(84, 142, 163);
+	-webkit-box-shadow: 0.3rem 0.3rem 1rem rgb(84, 142, 163);
+	box-shadow: 0.3rem 0.3rem 1rem rgb(84, 142, 163);
 }
 
 .imgLinkedin:hover {

@@ -1,9 +1,18 @@
 import styles from "./About.module.css";
 import imagen from "../../assets/img/backgrounds/perfil-tiny.jpg";
-import linkedin from "../../assets/img/icons/linkedin-blue.png";
-import github from "../../assets/img/icons/github-ico.svg";
+import linkedin from "../../assets/img/icons/linkedin.png";
+import github from "../../assets/img/icons/logotipo-de-github.png";
+import portafolio from "../../assets/img/icons/portafolio.png";
 
-const technologies = ["HTML", "CSS", "JavaScript", "React", "NodeJS", "SQL"];
+const technologies = [
+	"HTML",
+	"CSS",
+	"JavaScript",
+	"React.js",
+	"Next.js",
+	"Node.js",
+	"SQL",
+];
 const showTechs = technologies.map((item) => <li key={item}>{item}</li>);
 
 const About = () => {
@@ -41,6 +50,13 @@ const About = () => {
 								rel="noreferrer"
 							>
 								<img src={github} className={styles.imgGithub}></img>
+							</a>
+							<a
+								href="https://fabianblancowuest.netlify.app/"
+								target="_blank"
+								rel="noreferrer"
+							>
+								<img src={portafolio} className={styles.imgPortafolio}></img>
 							</a>
 							{/* <a href="https://www.instagram.com/fabianblancowuest" target="_blank" rel="noreferrer"><img src={instagram} className={styles.imgInstagram}></img></a> */}
 						</div>
