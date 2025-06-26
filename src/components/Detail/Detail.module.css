@@ -17,12 +17,11 @@
 .item1,
 .item2 {
 	flex-basis: 50%;
-	font-size: 1rem;
+	font-size: 1.1rem;
 	letter-spacing: 0.2rem;
 	height: 100vh;
 	justify-content: center;
 	align-items: center;
-	/* background-color: rgba(0, 0, 0, 0.6); */
 }
 
 .item1 {
@@ -32,6 +31,7 @@
 	align-items: center;
 	justify-content: center;
 	animation: aparecer 5s ease;
+	/* background-color: rgba(0, 0, 0, 0.6); */
 }
 
 .item2 {
@@ -48,6 +48,12 @@
 	text-transform: uppercase;
 	letter-spacing: 1rem;
 	text-align: center;
+}
+
+.item1 h1,
+h3 {
+	background-color: rgba(0, 0, 0, 0.6);
+	/* text-shadow: 3px 3px 5px black; */
 }
 
 .img {
