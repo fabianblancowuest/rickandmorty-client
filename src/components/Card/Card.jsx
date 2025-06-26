@@ -51,7 +51,9 @@ function Card(props) {
 	}
 
 	const handleDelete = () => {
-		dispatch(deleteCharacter(id));
+		setTimeout(() => {
+			dispatch(deleteCharacter(id));
+		}, 1000);
 	};
 
 	useEffect(() => {
